@@ -31,7 +31,7 @@ class Home extends Component{
             <h2>Lo más visto en películas</h2>
 
                 <ul className="categories masvistas">
-                    {this.state.peliculas.map (({this.props.peliculas.name},idx) => <DetailMovies key={this.state.peliculas.name+idx}  />)} 
+                    {this.state.peliculas.map ((idx) => <DetailMovies key={this.state.peliculas.id+idx} descripción={this.state.peliculas.overview} title={this.state.peliculas.title} />)} 
                 </ul>
 
                 <ul className="categories"></ul>

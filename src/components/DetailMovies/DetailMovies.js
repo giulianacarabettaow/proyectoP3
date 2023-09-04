@@ -8,21 +8,27 @@ class DetailMovies extends Component{
         }
     }
     render(){
-        console.log (this.props)
+        // console.log (this.props)
+        console.log(this.props.title)
         return(
             <section className="bordesDetail">
-            <article className="imagenDetalle">
-                
-            </article>
-
-            <ul className="genero">
-    
-            </ul>
+            {/* <article className="imagenDetalle">
+                <img/>
+            </article> */}
 
             <article className="detalles">
 
             </article>
-            {/* <h3>Género/s: this.props</h3> */}
+            <h3>Título:{this.props.title}</h3>
+           
+            <ul>
+                <li>Descripción:{this.props.descripcion}</li>
+                <button type="button">Leer más</button>
+
+                <button type="button">Ir a detalle</button>
+
+                <button type="button">Agregar a Favoritos</button>
+            </ul>
             <article className="detallesGen">
 
             </article>
