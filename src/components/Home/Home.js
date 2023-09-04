@@ -5,7 +5,7 @@ class Home extends Component{
     constructor(){
         super()
         this.state={ 
-            peliculas:[] //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
+            moviesPopular:[] //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
         }
     }
 
@@ -14,28 +14,31 @@ class Home extends Component{
         fetch ('https://api.themoviedb.org/3/movie/popular?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e')
         .then(res=> res.json()) //trae los datos y los pasa a json
         .then(data=> this.setState({ //este DATA muestra los datos ya jsoneados. La info de data la sube al estado
-            peliculas: data.results, //estos datos se guardan en el array del estado (linea 12) // estamos accediendo al objeto data de la api, metodo results
+            moviesPopular: data.results, //estos datos se guardan en el array del estado (linea 12) // estamos accediendo al objeto data de la api, metodo results
 
         })) 
         .catch()
 
-        // PONNER EL OTRO FETCH
-    }
+        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c71f5b75c8e3c6372967558c16ff597f')
+        .then(res=>res.json())
+        .then(data=>this.setState({
+            moviesTopRated: data.results
+        }))
+    }   
 
     masVistas(){}
 
     render(){
-        console.log(this.state.peliculas);
+        console.log(this.state.moviesPopular);
         return (
+
             <article  className="article peliculas">
             <h2>Lo más visto en películas</h2>
 
                 <ul className="categories masvistas">
-                    {this.state.peliculas.map ((idx) => <DetailMovies key={this.state.peliculas.id+idx} descripción={this.state.peliculas.overview} title={this.state.peliculas.title} />)} 
-                </ul>
-
-                <ul className="categories"></ul>
-                    
+                    {this.state.moviesPopular.map ((popular,idx)=> <DetailMovies key={this.state.moviesPopular.id} name={popular.title}   /> )}
+                           
+                </ul>                    
 
         </article>
 
