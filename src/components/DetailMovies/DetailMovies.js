@@ -1,10 +1,5 @@
 import React, {Component} from "react";
 
-
-
-
-
-
 class DetailMovies extends Component{
     constructor(props){
         super(props)
@@ -27,7 +22,7 @@ class DetailMovies extends Component{
             <article className="detalles">
 
             </article>
-            <h3>Género/s:</h3>
+            {/* <h3>Género/s: this.props</h3> */}
             <article className="detallesGen">
 
             </article>

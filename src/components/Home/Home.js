@@ -1,9 +1,5 @@
 import React, {Component} from "react";
-
-
-
-
-
+import DetailMovies from '../DetailMovies/DetailMovies'
 
 class Home extends Component{
     constructor(){
@@ -26,7 +22,7 @@ class Home extends Component{
         // PONNER EL OTRO FETCH
     }
 
-    masVistas()
+    masVistas(){}
 
     render(){
         console.log(this.state.peliculas);
@@ -35,7 +31,7 @@ class Home extends Component{
             <h2>Lo más visto en películas</h2>
 
                 <ul className="categories masvistas">
-                    {this.state.peliculas.map (({this.state.peliculas}, idx) => <DetailMovies key={this.state.peliculas.name+idx}                           />)} 
+                    {this.state.peliculas.map (({this.props.peliculas.name},idx) => <DetailMovies key={this.state.peliculas.name+idx}  />)} 
                 </ul>
 
                 <ul className="categories"></ul>
@@ -43,14 +39,7 @@ class Home extends Component{
 
         </article>
 
-
-
-
-        ) 
-    }
-
-
-
+        )}
 
 }
 
