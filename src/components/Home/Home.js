@@ -22,11 +22,31 @@ class Home extends Component{
 
         })) 
         .catch()
+
+        // PONNER EL OTRO FETCH
     }
+
+    masVistas()
 
     render(){
         console.log(this.state.peliculas);
-        return ("hola") 
+        return (
+            <article  className="article peliculas">
+            <h2>Lo más visto en películas</h2>
+
+                <ul className="categories masvistas">
+                    {this.state.peliculas.map (({this.state.peliculas}, idx) => <DetailMovies key={this.state.peliculas.name+idx}                           />)} 
+                </ul>
+
+                <ul className="categories"></ul>
+                    
+
+        </article>
+
+
+
+
+        ) 
     }
 
 
