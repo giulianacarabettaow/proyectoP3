@@ -26,7 +26,9 @@ class Home extends Component{
         }))
     }   
 
-    masVistas(){}
+    masVistas(){
+        
+    }
 
     render(){
         console.log(this.state.moviesPopular);
@@ -36,7 +38,7 @@ class Home extends Component{
             <h2>Lo más visto en películas</h2>
 
                 <ul className="categories masvistas">
-                    {this.state.moviesPopular.map ((popular,idx)=> <DetailMovies key={this.state.moviesPopular.id} name={popular.title}   /> )}
+                    {this.state.moviesPopular.map ((popular,idx)=> <DetailMovies key={this.state.moviesPopular.id} name={popular.title} descripcion={popular.overview}  /> )}
                            
                 </ul>                    
 
