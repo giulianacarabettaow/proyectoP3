@@ -5,36 +5,38 @@ class DetailMovies extends Component{
         super(props)
         this.state={
             moviesPopular: [],
-            descripcion: false
+            extra: false
         }
     }
 
     verDescricion(){
         this.setState({
-            descripcion: true
-        })
-    }
+            extra: true
+    })}
 
-    noVerDescripcion(){
+    noVerDescricion(){
         this.setState({
             extra: false
-        })
-    }
+    })}
+    
 
     render(){
-        // console.log (this.props)
-        console.log(this.props.title)
         return(
         <Fragment>
             <img/>
             <li>Name:{this.props.name} </li>
-            <button></button>
-            {/* <li> { this.state.descripcion ? this.props.descripcion  }</li>
-                {
-                this.state.descripcion ? 
-                <button type="button" onClick={()=>this.verDescricion}>Ver descripción</button>
-                    
-                } */}
+           
+             <li>{ this.state.extra ? this.props.descripcion : ''} </li>
+             {
+                this.state.extra ? 
+
+                    <button type="button" onClick={()=>this.noVerDescricion()} >Dejar de ver la descipcion</button>
+                :
+                    <button type="button" onClick={()=>this.verDescricion()} >Ver la descipcion</button>
+
+             }
+                
+                
             <li>Estreno:</li>
         </Fragment>
         )
