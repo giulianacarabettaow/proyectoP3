@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from "react";
+import {Link} from 'react-router-dom';
 
-class DetailMovies extends Component{
+class MoviesPopular extends Component{
     constructor(props){
         super(props)
         this.state={
@@ -35,7 +36,8 @@ class DetailMovies extends Component{
                     <button type="button" onClick={()=>this.verDescricion()} >Ver la descipcion</button>
 
              }
-                
+                 {/* <Link to={`/personajes/id/${this.props.datosPersonaje.id}`}><button type='button'><h2>{this.props.datosPersonaje.name}</h2></button></Link> Nombre */}
+            <Link to={`/moviesPopular/id/${this.props.id}`}><blutton>Ir a detalle</blutton></Link>
                 
             <li>Estreno:</li>
         </Fragment>
@@ -47,4 +49,4 @@ class DetailMovies extends Component{
 
 
 
-export default DetailMovies
+export default DetailMoviesPopular

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import DetailMovies from '../DetailMovies/DetailMovies'
+import MoviesPopular from '../moviesPopular/MoviesPopular'
+
 
 class Home extends Component{
     constructor(){
@@ -38,7 +39,7 @@ class Home extends Component{
             <h2>Lo más visto en películas</h2>
 
                 <ul className="categories masvistas">
-                    {this.state.moviesPopular.map ((popular,idx)=> <DetailMovies key={this.state.moviesPopular.id} name={popular.title} descripcion={popular.overview}  /> )}
+                    {this.state.moviesPopular.map ((popular,idx)=> <DetailMoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  /> )}
                            
                 </ul>                    
 
