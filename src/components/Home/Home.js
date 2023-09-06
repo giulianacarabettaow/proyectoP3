@@ -43,7 +43,8 @@ class Home extends Component{
                            
                 </ul>                    
 
-        </article>
+            </article>
+
 
         )}
 

@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class MoviesRated extends Component{
+class MoviesRatedDetail extends Component{
     constructor(){
         super()
         this.state={
@@ -10,4 +10,4 @@ class MoviesRated extends Component{
     }
 }
 
-export default MoviesRated
+export default MoviesRatedDetail
