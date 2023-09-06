@@ -6,7 +6,8 @@ class Home extends Component{
     constructor(){
         super()
         this.state={ 
-            moviesPopular:[] //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
+            moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
+            moviesTopRated:[]
         }
     }
 
@@ -32,7 +33,8 @@ class Home extends Component{
     }
 
     render(){
-        console.log(this.state.moviesPopular);
+        // console.log(this.state.moviesPopular);
+        console.log(this.state)
         return (
 
             <article  className="article peliculas">

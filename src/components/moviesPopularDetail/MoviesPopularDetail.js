@@ -5,7 +5,8 @@ class MoviesPopularDetail extends Component{
     constructor(props){
         super(props)
         this.state={ 
-            oneMovie:[],
+            titulo: '',
+
             id: props.match.params.id
         }
         console.log(this.state)
@@ -15,7 +16,10 @@ class MoviesPopularDetail extends Component{
         fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
-            oneMovie: data.results 
+            titulo: data.original_title, 
+            calificacion: data.vote_average,
+            fechaDeEstreno: data.release_date,
+            sinopsis: data.overview
         })) 
         .catch()
     }
@@ -25,12 +29,12 @@ class MoviesPopularDetail extends Component{
         return(
                 <React.Fragment>
                     <section>
-                        <h2>{}</h2>
+                        <h2>{this.state.titulo}</h2>
                     <ul>
-                        <li>Calificacion:</li>
-                        <li>Fecha de estreno:</li>
+                        <li>Calificacion:{this.state.calificacion}</li>
+                        <li>Fecha de estreno:{this.state.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
-                        <li>Sinopsis:</li>
+                        <li>Sinopsis:{this.state.sinopsis}</li>
                         <li>Genero:</li>
                         <button>Agregar a fav</button>
                     </ul>
