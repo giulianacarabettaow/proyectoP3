@@ -7,12 +7,14 @@ import MoviesPopularDetail from './components/moviesPopularDetail/MoviesPopularD
 function App() {
   return (
     <div className="App">  
-
-    <Home/>
-   
         <Switch>
           <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
+          <Route path='/' component={Home}></Route>
         </Switch>
+
+
+   
+       
    
 
     </div>

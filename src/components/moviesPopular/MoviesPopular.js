@@ -1,11 +1,12 @@
 import React, {Component, Fragment} from "react";
 import {Link} from 'react-router-dom';
+import MoviesPopularDetail from "../moviesPopularDetail/MoviesPopularDetail";
 
 class MoviesPopular extends Component{
     constructor(props){
         super(props)
         this.state={
-            moviesPopular: [],
+            moviesPopular: this.props.moviesPopular,
             extra: false
         }
     }
@@ -36,10 +37,14 @@ class MoviesPopular extends Component{
                     <button type="button" onClick={()=>this.verDescricion()} >Ver la descipcion</button>
 
              }
-                 {/* <Link to={`/personajes/id/${this.props.datosPersonaje.id}`}><button type='button'><h2>{this.props.datosPersonaje.name}</h2></button></Link> Nombre */}
-            <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir a detalle</blutton></Link></li>
+            <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir a detalle</blutton></Link>
+
+                {/* {this.state.moviesPopular.map((oneMovie,idx)=><MoviesPopularDetail key={oneMovie.id+idx} titulo={oneMovie.title} rating={oneMovie.vote_average} fechaDeEstreno={oneMovie.release_date} sinopsis={oneMovie.overview} genero={oneMovie.genre_ids} />)} */}
+
+            </li>
                 
-            <li>Estreno:</li>
+
+
         </Fragment>
         )
     }
