@@ -37,7 +37,7 @@ class MoviesPopular extends Component{
 
              }
                  {/* <Link to={`/personajes/id/${this.props.datosPersonaje.id}`}><button type='button'><h2>{this.props.datosPersonaje.name}</h2></button></Link> Nombre */}
-            <Link to={`/moviesPopular/id/${this.props.id}`}><blutton>Ir a detalle</blutton></Link>
+            <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir a detalle</blutton></Link></li>
                 
             <li>Estreno:</li>
         </Fragment>
@@ -49,4 +49,4 @@ class MoviesPopular extends Component{
 
 
 
-export default DetailMoviesPopular
+export default MoviesPopular
