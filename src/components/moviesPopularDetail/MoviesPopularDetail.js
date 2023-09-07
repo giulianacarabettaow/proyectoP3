@@ -6,7 +6,8 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
-            id: props.match.params.id
+            id: props.match.params.id,
+            ButtonFavs:"Agregar a favoritos",
         }
         console.log(this.state)
     }
@@ -18,6 +19,49 @@ class MoviesPopularDetail extends Component{
             oneMovie: data.results 
         })) 
         .catch()
+
+    let arrayFavoritos=[];
+    let recuperosStorage= localStorage.getItem("favoritos")
+    if (recuperosStorage !==null){
+        arrayFavoritos=JSON.parse(recuperosStorage);
+        if (arrayFavoritos.includes(this.props.id)){
+            this.setState({
+                ButtonFavs:"Quitar de favoritos"
+            })
+        }
+    } 
+
+    }
+
+    agregarFavs(id){
+        let arrayFavoritos=[];
+        let recuperosStorage= localStorage.getItem("favoritos");
+
+        if (recuperosStorage !==null){
+            arrayFavoritos=JSON.parse(recuperosStorage);
+        }
+        
+    if (arrayFavoritos.includes(id)){
+
+        //en el caso del que el id este en el array queremos sacar el id
+        arrayFavoritos=arrayFavoritos.filter(unId => unId !==id)
+
+        this.setState({
+
+            botonfav: "Agregar a favoritos"
+        })
+    
+     } else{
+        arrayFavoritos.push(id);
+        this.setState({
+            botonfav:"Quitar de favoritos"
+        })
+        }
+
+
+    let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+    localStorage.setItem('favoritos', arrayFavoritosAString)
+
     }
 
 
@@ -32,14 +76,15 @@ class MoviesPopularDetail extends Component{
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:</li>
                         <li>Genero:</li>
-                        <button>Agregar a fav</button>
+                        <button onClick={()=>this.agregarFavs(this.props.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
                     </section>
                 </React.Fragment>
             
             )
-    }
+            }
+        
 }
 
 export default MoviesPopularDetail
