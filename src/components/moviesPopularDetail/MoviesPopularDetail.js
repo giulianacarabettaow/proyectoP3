@@ -6,7 +6,8 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
-            id: props.match.params.id,
+            favoritos:[],
+            // id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
 
         }
@@ -17,54 +18,57 @@ class MoviesPopularDetail extends Component{
         fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
-            titulo: data.original_title, 
-            calificacion: data.vote_average,
-            fechaDeEstreno: data.release_date,
-            sinopsis: data.overview
+            titulo: data.original_title,
+            oneMovie: data
         })) 
+        
         .catch()
 
-    let arrayFavoritos=[];
-    let recuperosStorage= localStorage.getItem("favoritos")
-    if (recuperosStorage !==null){
-        arrayFavoritos=JSON.parse(recuperosStorage);
-        if (arrayFavoritos.includes(this.props.id)){
-            this.setState({
-                ButtonFavs:"Quitar de favoritos"
-            })
-        }
-    } 
+        let arrayFavoritos=[];
+        let recuperoStorage= localStorage.getItem("favoritos")
+
+        if (recuperoStorage !==null){
+            arrayFavoritos=JSON.parse(recuperoStorage);
+
+                if (arrayFavoritos.includes(this.state.id)){
+                    this.setState({
+                        ButtonFavs:"Quitar de favoritos"
+                    })
+                }
+            }
 
     }
 
     agregarFavs(id){
         let arrayFavoritos=[];
-        let recuperosStorage= localStorage.getItem("favoritos");
+        let recuperoStorage=localStorage.getItem("favoritos");
 
-        if (recuperosStorage !==null){
-            arrayFavoritos=JSON.parse(recuperosStorage);
+        if (recuperoStorage !==null){
+            arrayFavoritos=JSON.parse(recuperoStorage);
         }
         
-    if (arrayFavoritos.includes(id)){
+            if (arrayFavoritos.includes(id)){
+                //en el caso del que el id este en el array queremos sacar el id
+                arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
-        //en el caso del que el id este en el array queremos sacar el id
-        arrayFavoritos=arrayFavoritos.filter(unId => unId !==id)
+                    this.setState({
+                        botonfav: "Agregar a favoritos"
+                    })
+             } 
 
-        this.setState({
-
-            botonfav: "Agregar a favoritos"
-        })
-    
-     } else{
-        arrayFavoritos.push(id);
-        this.setState({
-            botonfav:"Quitar de favoritos"
-        })
+                //si el id no esta en el array lo pusheo
+            else{
+                arrayFavoritos.push(id);   
+                    this.setState({
+                        botonfav:"Quitar de favoritos"
+                })
         }
 
 
     let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
     localStorage.setItem('favoritos', arrayFavoritosAString)
+
+    console.log(localStorage)
 
     }
 
@@ -73,14 +77,14 @@ class MoviesPopularDetail extends Component{
         return(
                 <React.Fragment>
                     <section>
-                        <h2>{this.state.titulo}</h2>
+                        <h2>{this.state.oneMovie.original_title}</h2>
                     <ul>
-                        <li>Calificacion:{this.state.calificacion}</li>
-                        <li>Fecha de estreno:{this.state.release_date}</li>
+                        <li>Calificacion:{this.state.oneMovie.calificacion}</li>
+                        <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
-                        <li>Sinopsis:{this.state.sinopsis}</li>
+                        <li>Sinopsis:{this.state.oneMovie.sinopsis}</li>
                         <li>Genero:</li>
-                        <button onClick={()=>this.agregarFavs(this.props.id)}  type="button">{this.state.ButtonFavs}</button>
+                        <button onClick={()=>this.agregarFavs(this.state.oneMovie.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
                     </section>
