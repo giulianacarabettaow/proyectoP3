@@ -6,8 +6,8 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
-            favoritos:[],
-            // id: props.match.params.id,
+            // favoritos: [],
+            id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
 
         }
@@ -24,24 +24,25 @@ class MoviesPopularDetail extends Component{
         
         .catch()
 
-        let arrayFavoritos=[];
-        let recuperoStorage= localStorage.getItem("favoritos")
-
-        if (recuperoStorage !==null){
-            arrayFavoritos=JSON.parse(recuperoStorage);
-
-                if (arrayFavoritos.includes(this.state.id)){
-                    this.setState({
-                        ButtonFavs:"Quitar de favoritos"
-                    })
-                }
-            }
+    let arrayFavoritos=[];
+    let recuperoStorage= localStorage.getItem("favoritos")
+    if (recuperoStorage !==null){
+        arrayFavoritos=JSON.parse(recuperoStorage);
+        this.setState({favoritos: arrayFavoritos})
+        if (arrayFavoritos.includes(this.state.id)){
+            this.setState({
+                ButtonFavs:"Quitar de favoritos"
+            })
+        }
+    } 
 
     }
 
     agregarFavs(id){
+        console.log(id)
+    
         let arrayFavoritos=[];
-        let recuperoStorage=localStorage.getItem("favoritos");
+        let recuperoStorage= localStorage.getItem("favoritos");
 
         if (recuperoStorage !==null){
             arrayFavoritos=JSON.parse(recuperoStorage);
@@ -51,25 +52,25 @@ class MoviesPopularDetail extends Component{
                 //en el caso del que el id este en el array queremos sacar el id
                 arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
-                    this.setState({
-                        botonfav: "Agregar a favoritos"
-                    })
-             } 
+        //en el caso del que el id este en el array queremos sacar el id
+        arrayFavoritos=arrayFavoritos.filter(unId => unId !==  id)
 
-                //si el id no esta en el array lo pusheo
-            else{
-                arrayFavoritos.push(id);   
-                    this.setState({
-                        botonfav:"Quitar de favoritos"
-                })
+        this.setState({
+
+            ButtonFavs: "Agregar a favoritos"
+        })
+    
+     }else{
+        arrayFavoritos.push(id);
+        this.setState({
+            ButtonFavs:"Quitar de favoritos"
+        })
         }
 
 
     let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
     localStorage.setItem('favoritos', arrayFavoritosAString)
-
-    console.log(localStorage)
-
+        console.log(arrayFavoritos);
     }
 
 
@@ -84,7 +85,7 @@ class MoviesPopularDetail extends Component{
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:{this.state.oneMovie.sinopsis}</li>
                         <li>Genero:</li>
-                        <button onClick={()=>this.agregarFavs(this.state.oneMovie.id)}  type="button">{this.state.ButtonFavs}</button>
+                        <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
                     </section>
