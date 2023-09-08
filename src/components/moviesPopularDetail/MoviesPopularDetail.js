@@ -18,11 +18,10 @@ class MoviesPopularDetail extends Component{
         fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
-            titulo: data.original_title, 
-            calificacion: data.vote_average,
-            fechaDeEstreno: data.release_date,
-            sinopsis: data.overview
+            titulo: data.original_title,
+            oneMovie: data
         })) 
+        
         .catch()
 
     let arrayFavoritos=[];
@@ -49,7 +48,9 @@ class MoviesPopularDetail extends Component{
             arrayFavoritos=JSON.parse(recuperoStorage);
         }
         
-    if (arrayFavoritos.includes(id)){
+            if (arrayFavoritos.includes(id)){
+                //en el caso del que el id este en el array queremos sacar el id
+                arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
         //en el caso del que el id este en el array queremos sacar el id
         arrayFavoritos=arrayFavoritos.filter(unId => unId !==  id)
@@ -77,12 +78,12 @@ class MoviesPopularDetail extends Component{
         return(
                 <React.Fragment>
                     <section>
-                        <h2>{this.state.titulo}</h2>
+                        <h2>{this.state.oneMovie.original_title}</h2>
                     <ul>
-                        <li>Calificacion:{this.state.calificacion}</li>
-                        <li>Fecha de estreno:{this.state.release_date}</li>
+                        <li>Calificacion:{this.state.oneMovie.calificacion}</li>
+                        <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
-                        <li>Sinopsis:{this.state.sinopsis}</li>
+                        <li>Sinopsis:{this.state.oneMovie.sinopsis}</li>
                         <li>Genero:</li>
                         <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
