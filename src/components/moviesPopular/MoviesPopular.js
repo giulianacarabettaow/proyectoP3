@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import MoviesPopularDetail from "../moviesPopularDetail/MoviesPopularDetail";
+import MoviesPopularDetail from "../MoviesPopularDetail/MoviesPopularDetail";
 
 class MoviesPopular extends Component{
     constructor(props){
@@ -33,12 +33,12 @@ class MoviesPopular extends Component{
              {
                 this.state.extra ? 
 
-                    <button type="button" onClick={()=>this.noVerDescricion()} >Dejar de ver la descipcion</button>
+                    <button type="button" onClick={()=>this.noVerDescricion()} >Ocultar</button>
                 :
-                    <button type="button" onClick={()=>this.verDescricion()} >Ver la descipcion</button>
+                    <button type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
 
              }
-            <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir a detalle</blutton></Link></li>
+            <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir al detalle</blutton></Link></li>
              
 
         </React.Fragment>
