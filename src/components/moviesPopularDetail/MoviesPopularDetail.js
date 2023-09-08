@@ -6,6 +6,7 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
+            // favoritos: [],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
 
@@ -25,10 +26,11 @@ class MoviesPopularDetail extends Component{
         .catch()
 
     let arrayFavoritos=[];
-    let recuperosStorage= localStorage.getItem("favoritos")
-    if (recuperosStorage !==null){
-        arrayFavoritos=JSON.parse(recuperosStorage);
-        if (arrayFavoritos.includes(this.props.id)){
+    let recuperoStorage= localStorage.getItem("favoritos")
+    if (recuperoStorage !==null){
+        arrayFavoritos=JSON.parse(recuperoStorage);
+        this.setState({favoritos: arrayFavoritos})
+        if (arrayFavoritos.includes(this.state.id)){
             this.setState({
                 ButtonFavs:"Quitar de favoritos"
             })
@@ -38,34 +40,36 @@ class MoviesPopularDetail extends Component{
     }
 
     agregarFavs(id){
+        console.log(id)
+    
         let arrayFavoritos=[];
-        let recuperosStorage= localStorage.getItem("favoritos");
+        let recuperoStorage= localStorage.getItem("favoritos");
 
-        if (recuperosStorage !==null){
-            arrayFavoritos=JSON.parse(recuperosStorage);
+        if (recuperoStorage !==null){
+            arrayFavoritos=JSON.parse(recuperoStorage);
         }
         
     if (arrayFavoritos.includes(id)){
 
         //en el caso del que el id este en el array queremos sacar el id
-        arrayFavoritos=arrayFavoritos.filter(unId => unId !==id)
+        arrayFavoritos=arrayFavoritos.filter(unId => unId !==  id)
 
         this.setState({
 
-            botonfav: "Agregar a favoritos"
+            ButtonFavs: "Agregar a favoritos"
         })
     
-     } else{
+     }else{
         arrayFavoritos.push(id);
         this.setState({
-            botonfav:"Quitar de favoritos"
+            ButtonFavs:"Quitar de favoritos"
         })
         }
 
 
     let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
     localStorage.setItem('favoritos', arrayFavoritosAString)
-
+        console.log(arrayFavoritos);
     }
 
 
@@ -80,7 +84,7 @@ class MoviesPopularDetail extends Component{
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:{this.state.sinopsis}</li>
                         <li>Genero:</li>
-                        <button onClick={()=>this.agregarFavs(this.props.id)}  type="button">{this.state.ButtonFavs}</button>
+                        <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
                     </section>

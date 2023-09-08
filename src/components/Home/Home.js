@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import MoviesPopular from '../moviesPopular/MoviesPopular'
+import MoviesPopular from '../MoviesPopular/MoviesPopular';
+import './Home.css';
 
 
 class Home extends Component{
@@ -37,10 +38,10 @@ class Home extends Component{
         console.log(this.state)
         return (
 
-            <article  className="article peliculas">
-            <h2>Lo más visto en películas</h2>
+            <article  className="articlePeliculas">
+            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
-                <ul className="categories masvistas">
+                <ul className="categoriesMasVistas">
                     {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  /> )}
                            
                 </ul>                    

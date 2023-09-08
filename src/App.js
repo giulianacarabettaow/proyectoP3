@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter,Switch, Route, Link} from "react-router-dom";
 import Home from "./components/Home/Home";
-import MoviesPopularDetail from './components/moviesPopularDetail/MoviesPopularDetail';
-import MoviesRatedDetail from './components/moviesRatedDetail/MoviesRatedDetail';
+import MoviesPopularDetail from './components/MoviesPopularDetail/MoviesPopularDetail';
+import MoviesRatedDetail from './components/MoviesRatedDetail/MoviesRatedDetail';
 import Error404 from './components/Error404/Error404';
 
 function App() {
