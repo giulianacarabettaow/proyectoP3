@@ -4,6 +4,8 @@ import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
 import MoviesPopularDetail from './components/MoviesPopularDetail/MoviesPopularDetail';
 import MoviesRatedDetail from './components/MoviesRatedDetail/MoviesRatedDetail';
+import Favorite from './components/Favorite/Favorite';
+import Todas from './components/Todas/Todas';
 import Error404 from './components/Error404/Error404';
 
 function App() {
@@ -17,6 +19,8 @@ function App() {
           
           <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
           <Route path='/moviesRated/id/:id' component={MoviesRatedDetail}></Route>
+          <Route path='/Favoritos' component={Favorite}></Route>
+          <Route path='/verTodas' component={Todas}></Route>
           <Route component={Error404}/>
           
         </Switch>
