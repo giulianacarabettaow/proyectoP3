@@ -12,7 +12,6 @@ function App() {
         
         <Switch>
           <Route path='/' exact component={Home}></Route>
-          
           <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
           <Route path='/moviesRated/id/:id' component={MoviesRatedDetail}></Route>
           <Route component={Error404}/>
