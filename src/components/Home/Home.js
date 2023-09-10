@@ -39,6 +39,7 @@ class Home extends Component{
         console.log(this.state)
         return (
             <React.Fragment>
+            <section className="section1">
             <article  className="articlePeliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
@@ -55,6 +56,7 @@ class Home extends Component{
                 </ul>                    
 
             </article>
+            </section>
             </React.Fragment>
 
         )}
