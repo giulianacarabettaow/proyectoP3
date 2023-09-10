@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 
-
 class MoviesPopular extends Component{
     constructor(props){
         super(props)
@@ -15,23 +14,24 @@ class MoviesPopular extends Component{
         console.log(this.state)
     }
 
-    componentDidMount(){
-        let arrayFavoritos=[];
-        let recuperoStorage= localStorage.getItem("favoritos")
-        if (recuperoStorage !==null){
+    // componentDidMount(){
+    //     let arrayFavoritos=[];
+    //     console.log(arrayFavoritos)
+    //     let recuperoStorage= localStorage.getItem("favoritos")
+    //     if (recuperoStorage !==null){
     
-            arrayFavoritos=JSON.parse(recuperoStorage);
-            this.setState({
-                favoritos: arrayFavoritos
-            })
+    //         arrayFavoritos=JSON.parse(recuperoStorage);
+    //         this.setState({
+    //             favoritos: arrayFavoritos
+    //         })
 
-            if (arrayFavoritos.includes(this.state.id)){
-                this.setState({
-                    ButtonFavs:"Quitar de favoritos"
-                })
-            }
-        } 
-    }
+    //         if (arrayFavoritos.includes(this.state.id)){
+    //             this.setState({
+    //                 ButtonFavs:"Quitar de favoritos"
+    //             })
+    //         }
+    //     } 
+    // }
 
     verDescricion(){
         this.setState({
@@ -99,9 +99,5 @@ class MoviesPopular extends Component{
         )
     }
 }
-
-
-
-
 
 export default MoviesPopular
