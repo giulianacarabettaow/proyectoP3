@@ -19,29 +19,10 @@ class MoviesPopularDetail extends Component{
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
             oneMovie: data,
+            genres: data.genres
         }))
-        
-      
-        // .then(() =>{
-        // let arrayGenres = [];
-        // this.state.oneMovie.genres.map((genre) => arrayGenres.push(genre))
-        // this.setState({
-        //      genres:arrayGenres.name
-        //     })
-        // })
-        
+    
         .catch()
-        
-        // let arrayGenres=[];
-        // if(this.state.oneMovie.genres !== null){
-        //     arrayGenres.push(this.state.oneMovie.genres)
-            
-        //     if(arrayGenres !== null){
-        //         this.setState({
-        //             genres:arrayGenres
-        //         })
-        //     }
-        // }
 
         let arrayFavoritos=[];
         let recuperoStorage= localStorage.getItem("favoritos")
@@ -101,7 +82,8 @@ class MoviesPopularDetail extends Component{
                         <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:{this.state.oneMovie.overview}</li>
-                        {this.state.genres.map((genres,idx) => <li key={genres.name+idx}> {genres} </li>  )}
+                        <ul>Genres:</ul>
+                        {this.state.genres.map((genres,idx) => <li key={genres.name+idx}> {genres.name} </li> )}
                         <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
