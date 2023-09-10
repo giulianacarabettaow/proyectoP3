@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
+import MoviesRated from "../MoviesRated/MoviesRated";
 import './Home.css';
 
 
@@ -42,7 +43,15 @@ class Home extends Component{
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
                 <ul className="categoriesMasVistas">
-                 {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
+                 {this.state.moviesPopular.slice(0,5).map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
+                </ul>                    
+
+            </article>
+            <article  className="articlePeliculas">
+            <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
+
+                <ul className="categoriesMasVistas">
+                 {this.state.moviesTopRated.slice(0,5).map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id}  />  )}                
                 </ul>                    
 
             </article>
