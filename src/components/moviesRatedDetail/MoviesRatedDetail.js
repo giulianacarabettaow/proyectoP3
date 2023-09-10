@@ -4,9 +4,16 @@ class MoviesRatedDetail extends Component{
     constructor(){
         super()
         this.state={
-            //aca va la data detallada del genero
-            //despues incluir props
+            hola:''
         }
+    }
+
+    render(){
+        return(
+            <React.Fragment>
+                <p>fdbknasf</p>
+            </React.Fragment>
+        )
     }
 }
 
