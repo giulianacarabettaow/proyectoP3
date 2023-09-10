@@ -11,36 +11,52 @@ class MoviesPopularDetail extends Component{
             genres:[]
 
         }
-        console.log(this.state)
+    console.log(this.state)
     }
     componentDidMount(){
        
         fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
-            oneMovie: data
+            oneMovie: data,
         }))
-        // .then(() =>{       
-        //      console.log(this.state.oneMovie.genres)
-        //     let arrayGenres = [];
-        //     this.state.oneMovie.genres.map(genre => arrayGenres.push(genre))
-        //     this.setState({genres: arrayGenres})})
-        //     console.log(this.state.genres)
+        
+      
+        // .then(() =>{
+        // let arrayGenres = [];
+        // this.state.oneMovie.genres.map((genre) => arrayGenres.push(genre))
+        // this.setState({
+        //      genres:arrayGenres.name
+        //     })
+        // })
+        
         .catch()
+        
+        // let arrayGenres=[];
+        // if(this.state.oneMovie.genres !== null){
+        //     arrayGenres.push(this.state.oneMovie.genres)
+            
+        //     if(arrayGenres !== null){
+        //         this.setState({
+        //             genres:arrayGenres
+        //         })
+        //     }
+        // }
 
-    let arrayFavoritos=[];
-    let recuperoStorage= localStorage.getItem("favoritos")
-    if (recuperoStorage !==null){
-        arrayFavoritos=JSON.parse(recuperoStorage);
-        this.setState({favoritos: arrayFavoritos})
-        if (arrayFavoritos.includes(this.state.id)){
-            this.setState({
-                ButtonFavs:"Quitar de favoritos"
-            })
-        }
-    } 
+        let arrayFavoritos=[];
+        let recuperoStorage= localStorage.getItem("favoritos")
+            if (recuperoStorage !==null){
+                arrayFavoritos=JSON.parse(recuperoStorage);
+                    this.setState({favoritos: arrayFavoritos})
+                 if (arrayFavoritos.includes(this.state.id)){
+                        this.setState({
+                        ButtonFavs:"Quitar de favoritos"
+                        })
+                    }
+        } 
 
     }
+    
 
     agregarFavs(id){
         console.log(id)
@@ -85,7 +101,7 @@ class MoviesPopularDetail extends Component{
                         <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:{this.state.oneMovie.overview}</li>
-                        <li>Genero:{this.state.genres[0]}</li>
+                        {this.state.genres.map((genres,idx) => <li key={genres.name+idx}> {genres} </li>  )}
                         <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
