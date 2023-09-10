@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter,Switch, Route, Link} from "react-router-dom";
+import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
 import MoviesPopularDetail from './components/MoviesPopularDetail/MoviesPopularDetail';
 import MoviesRatedDetail from './components/MoviesRatedDetail/MoviesRatedDetail';
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">  
 
+        <Header></Header>
         
         <Switch>
           <Route path='/' exact component={Home}></Route>
@@ -16,7 +18,6 @@ function App() {
           <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
           <Route path='/moviesRated/id/:id' component={MoviesRatedDetail}></Route>
           <Route component={Error404}/>
-          
           
         </Switch>
 
