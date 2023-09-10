@@ -6,7 +6,6 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
-            // favoritos: [],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
             genres:[]
@@ -21,11 +20,12 @@ class MoviesPopularDetail extends Component{
         .then(data=> this.setState({ 
             oneMovie: data
         }))
-        .then(() =>{       
-             console.log(this.state.oneMovie.genres)
-            let arrayGenres= [];
-            this.state.oneMovie.genres.map(genre => arrayGenres.push(genre))
-            this.setState({genres: arrayGenres})})
+        // .then(() =>{       
+        //      console.log(this.state.oneMovie.genres)
+        //     let arrayGenres = [];
+        //     this.state.oneMovie.genres.map(genre => arrayGenres.push(genre))
+        //     this.setState({genres: arrayGenres})})
+        //     console.log(this.state.genres)
         .catch()
 
     let arrayFavoritos=[];
@@ -52,12 +52,9 @@ class MoviesPopularDetail extends Component{
             arrayFavoritos=JSON.parse(recuperoStorage);
         }
         
-            if (arrayFavoritos.includes(id)){
+        if (arrayFavoritos.includes(id)){
                 //en el caso del que el id este en el array queremos sacar el id
                 arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
-
-        //en el caso del que el id este en el array queremos sacar el id
-        arrayFavoritos=arrayFavoritos.filter(unId => unId !==  id)
 
         this.setState({
 

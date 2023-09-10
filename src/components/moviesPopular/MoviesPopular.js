@@ -1,15 +1,36 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import MoviesPopularDetail from "../MoviesPopularDetail/MoviesPopularDetail";
+
 
 class MoviesPopular extends Component{
     constructor(props){
         super(props)
         this.state={
             moviesPopular: this.props.moviesPopular,
-            extra: false
+            extra: false,
+            ButtonFavs:"Agregar a favoritos",
+            favoritos:[],
+            id:this.props.id
         }
         console.log(this.state)
+    }
+
+    componentDidMount(){
+        let arrayFavoritos=[];
+        let recuperoStorage= localStorage.getItem("favoritos")
+        if (recuperoStorage !==null){
+    
+            arrayFavoritos=JSON.parse(recuperoStorage);
+            this.setState({
+                favoritos: arrayFavoritos
+            })
+
+            if (arrayFavoritos.includes(this.state.id)){
+                this.setState({
+                    ButtonFavs:"Quitar de favoritos"
+                })
+            }
+        } 
     }
 
     verDescricion(){
@@ -22,6 +43,38 @@ class MoviesPopular extends Component{
             extra: false
     })}
     
+    agregarFavs(id){
+        console.log(id)
+    
+        let arrayFavoritos=[];
+        let recuperoStorage= localStorage.getItem("favoritos");
+
+        if (recuperoStorage !==null){
+            arrayFavoritos=JSON.parse(recuperoStorage);
+        }
+        
+        if (arrayFavoritos.includes(id)){
+            //en el caso del que el id este en el array queremos sacar el id
+            arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
+
+        this.setState({
+
+            ButtonFavs: "Agregar a favoritos"
+        })
+    
+         }else{
+            arrayFavoritos.push(id);
+            this.setState({
+            ButtonFavs:"Quitar de favoritos"
+        })
+        }
+
+
+    let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+    localStorage.setItem('favoritos', arrayFavoritosAString)
+        console.log(arrayFavoritos);
+
+    }
 
     render(){
         return(
@@ -40,6 +93,7 @@ class MoviesPopular extends Component{
              }
             <li><Link to={`/moviesPopular/id/${this.props.id}`}><blutton type='button'>Ir al detalle</blutton></Link></li>
              
+             <li><button onClick={this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li>
 
         </React.Fragment>
         )
