@@ -6,6 +6,7 @@ import MoviesPopularDetail from './components/MoviesPopularDetail/MoviesPopularD
 import MoviesRatedDetail from './components/MoviesRatedDetail/MoviesRatedDetail';
 import Favorite from './components/Favorite/Favorite';
 import Todas from './components/Todas/Todas';
+import Footer from "./components/Footer/Footer";
 import Error404 from './components/Error404/Error404';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <Route component={Error404}/>
           
         </Switch>
+
+        <Footer/>
 
 
    
