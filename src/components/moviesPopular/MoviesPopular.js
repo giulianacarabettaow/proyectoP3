@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import '../../../public/css/styles.css';
+import '../../styles.css';
 
 class MoviesPopular extends Component{
     constructor(props){
@@ -85,20 +85,22 @@ class MoviesPopular extends Component{
         return(
         <React.Fragment>
             <img/>
-            <li>Name:{this.props.name} </li>
-           
-             <li>{ this.state.extra ? this.props.descripcion : ''} </li>
-             {
-                this.state.extra ? 
+            <ul className="listaPelis">
+                <li>Name:{this.props.name} </li>
+            
+                <li>{ this.state.extra ? this.props.descripcion : ''} </li>
+                {
+                    this.state.extra ? 
 
-                    <button type="button" onClick={()=>this.noVerDescricion()} >Ocultar</button>
-                :
-                    <button type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
+                        <button className="botonesHome" type="button" onClick={()=>this.noVerDescricion()} >Ocultar</button>
+                    :
+                        <button  className="botonesHome" type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
 
-             }
-            <li><Link to={`/moviesPopular/id/${this.props.id}`}><button type='button'>Ir al detalle</button></Link></li>
-             
-             <li><button onClick={()=>this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li>
+                }
+                <li><Link to={`/moviesPopular/id/${this.props.id}`}><button className="botonesHome" type='button'>Ir al detalle</button></Link></li>
+                
+                <li><button className="botonesHome" onClick={()=>this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li>
+            </ul>
 
         </React.Fragment>
         )

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import '../../../public/css/styles.css';
+import '../../styles.css';
 
 class MoviesRatedDetail extends Component{
     constructor(){

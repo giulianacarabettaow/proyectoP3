@@ -1,6 +1,40 @@
 *{
     box-sizing: border-box;
 }
+/*lo que agregamos o usamos en p3*/
+h2{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    color: #C2C2C2;
+    margin-left: 25px
+}
+.listaPelis{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
+    color: #b8b8b8e8;
+    border: 2px solid #8c8f98;
+    border-radius: 10px;
+    padding: 2px 3px;
+    margin: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: small;  
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+button:hover{
+    color: #8c8f98;
+}
+
+/*lo viejo*/
+
 
 .body{
     background: rgb(2,0,36);
@@ -29,10 +63,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    color: #0f030f;
 }
 
 h1{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
     color: #EBEBEB; 
 }
  
@@ -84,11 +122,7 @@ a{
     border: 2px solid #0f030f;
 }
 
-h2{
-    text-decoration: none;
-    color: #C2C2C2;
-    margin-left: 25px
-}
+
 
 .tituloMovie{
     text-decoration: none;

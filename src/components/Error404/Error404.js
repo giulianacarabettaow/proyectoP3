@@ -1,4 +1,4 @@
-import '../../../public/css/styles.css';
+import '../../styles.css';
 
 function Error404() {
     return(
