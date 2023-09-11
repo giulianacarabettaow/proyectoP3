@@ -10,6 +10,7 @@ class MoviesRated extends Component{
             ButtonFavs:"Agregar a favoritos",
             favoritos:[],
         }
+        
     }
 
     
@@ -38,7 +39,7 @@ class MoviesRated extends Component{
                     <button type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
 
              }
-            <li><Link to={`/moviesRated/id/${this.props.id}`}><blutton type='button'>Ir al detalle</blutton></Link></li>
+            <li><Link to={`/moviesRated/id/${this.props.id}`}><button type='button'>Ir al detalle</button></Link></li>
              
              {/* <li><button onClick={this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li> */}
 

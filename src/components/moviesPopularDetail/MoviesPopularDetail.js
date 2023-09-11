@@ -7,6 +7,7 @@ class MoviesPopularDetail extends Component{
         this.state={ 
             oneMovie:[],
             id: props.match.params.id,
+            favoritos:[],
             ButtonFavs:"Agregar a favoritos",
             genres:[]
 
@@ -54,13 +55,14 @@ class MoviesPopularDetail extends Component{
                 arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
         this.setState({
-
+            favoritos:arrayFavoritos,
             ButtonFavs: "Agregar a favoritos"
         })
     
      }else{
         arrayFavoritos.push(id);
         this.setState({
+            favoritos:arrayFavoritos,
             ButtonFavs:"Quitar de favoritos"
         })
         }
