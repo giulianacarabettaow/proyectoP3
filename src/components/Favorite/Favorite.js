@@ -1,26 +1,39 @@
 import React, { Component } from 'react'
 
-let recuperoStorage= localStorage.getItem("favoritos")
-console.log(recuperoStorage)
-
 class Favorite extends Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state={ 
-            oneMovie:[],
-            recuperoStorage: props.match.params.id,
-        
+            favoritos:[]
         }
-        console.log(this.state)
+    console.log(this.state)
+
     }
+
+    componentDidMount(){
+        let idFavoritos=[];
+
+        let recuperoStorage= localStorage.getItem("favoritos")
+        console.log(recuperoStorage)
+
+        
+        if (recuperoStorage !==null){
+            idFavoritos=JSON.parse(recuperoStorage)
+         
+            this.setState({
+                favoritos:idFavoritos,
+            })
+        }
+  
+    }
+    
 
     render(){
         return(
-            <React.Fragment>
-                <ul>{this.state.oneMovie.original_title}</ul>
-            </React.Fragment>
+            <h2>jsaj</h2>
         )
     }
+      
 }
 
 export default Favorite
