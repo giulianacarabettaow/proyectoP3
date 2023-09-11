@@ -10,6 +10,7 @@ class Todas extends Component{
         this.state={ 
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
+            buscado:"",
        
         }
     }
@@ -33,6 +34,15 @@ class Todas extends Component{
     
     }   
 
+    evitarSubmit (event){
+        event.preventDefault();
+    }
+
+    guardarDatos(eventoCampoImput){
+        this.setState({
+            buscado:eventoCampoImput.target.value
+        })
+    }
 
     render(){
         // console.log(this.state.moviesPopular);
@@ -40,6 +50,13 @@ class Todas extends Component{
         return (
             <React.Fragment>
             <section className="section1">
+
+            <form action=" " onSubmit={(event)=>this.evitarSubmit(event)}>
+            <label>Busqueda de peliculas</label>
+             <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} />
+             <button type="submit">Buscar</button>
+            </form>
+
             <article  className="articlePeliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
