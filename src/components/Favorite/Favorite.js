@@ -37,11 +37,12 @@ class Favorite extends Component{
     componentDidUpdate(){
         // aca hay que ir recargando
         
+        
+    }   
 
-
+    eliminarFav(id){
+        this.state.objFav.filter( unFav => unFav.id !== id)
     }
-
-    
 
     render(){
         console.log(this.state.objFav)
