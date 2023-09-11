@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import MoviesPopular from '../MoviesPopular/MoviesPopular';
 
 class Favorite extends Component{
     constructor(){
@@ -29,7 +31,26 @@ class Favorite extends Component{
     render(){
         console.log(this.state.favoritos)
         return(
-            <h2>jsaj</h2>
+            <React.Fragment>
+            <section className="section1">
+            <article  className="articlePeliculas">
+            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
+
+                <ul className="categoriesMasVistas">
+                 {this.state.favoritos.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
+                </ul>                    
+
+            </article>
+            {/* <article  className="articlePeliculas">
+            <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
+
+                <ul className="categoriesMasVistas">
+                 {this.state.favoritos.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id}  />  )}                
+                </ul>                    
+
+            </article> */}
+            </section>
+            </React.Fragment>
         )
     }
       
