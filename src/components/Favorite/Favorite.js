@@ -6,8 +6,6 @@ class Favorite extends Component{
         this.state={ 
             favoritos:[]
         }
-    console.log(this.state)
-
     }
 
     componentDidMount(){
@@ -29,6 +27,7 @@ class Favorite extends Component{
     
 
     render(){
+        console.log(this.state.favoritos)
         return(
             <h2>jsaj</h2>
         )

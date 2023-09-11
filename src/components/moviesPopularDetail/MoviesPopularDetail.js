@@ -6,7 +6,6 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
-            // favoritos: [],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
 
@@ -40,7 +39,7 @@ class MoviesPopularDetail extends Component{
 
     agregarFavs(id){
         console.log(id)
-    
+        id=Number(id)
         let arrayFavoritos=[];
         let recuperoStorage= localStorage.getItem("favoritos");
 
