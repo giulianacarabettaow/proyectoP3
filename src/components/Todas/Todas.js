@@ -31,9 +31,11 @@ class Todas extends Component{
 
         .catch()
     
-    }   
+    }
+    
+    
 
-
+    
     render(){
         // console.log(this.state.moviesPopular);
         console.log(this.state)
