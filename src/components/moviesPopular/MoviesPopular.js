@@ -36,9 +36,7 @@ class MoviesPopular extends Component{
           } 
      }
 
-     componentDidUpdate(){
-        console.log(this.state)
-     }
+
 
     verDescricion(){
         this.setState({
@@ -64,12 +62,13 @@ class MoviesPopular extends Component{
              //en el caso del que el id este en el array queremos sacar el id
              arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
-         this.setState({
+             this.setState({
             favoritos:arrayFavoritos,
              ButtonFavs: "Agregar a favoritos"
          })
     
           }else{
+
              arrayFavoritos.push(id);
              this.setState({
              favoritos:arrayFavoritos,
@@ -79,6 +78,10 @@ class MoviesPopular extends Component{
             let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
             localStorage.setItem('favoritos', arrayFavoritosAString)
             console.log(arrayFavoritos);
+
+            if(this.props.handle){
+                this.props.handle()
+            }
         }
 
     render(){
