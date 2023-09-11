@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../../../public/css/styles.css';
 
 
 class MoviesPopularDetail extends Component{

@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
-import './Home.css';
+import '../../../public/css/styles.css';
 
 
 class Home extends Component{

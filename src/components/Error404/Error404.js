@@ -1,3 +1,5 @@
+import '../../../public/css/styles.css';
+
 function Error404() {
     return(
         <div>

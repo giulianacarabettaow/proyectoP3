@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../../../public/css/styles.css';
+
 
 class Favorite extends Component{
     constructor(){
