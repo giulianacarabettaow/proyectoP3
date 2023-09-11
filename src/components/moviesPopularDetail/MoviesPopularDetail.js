@@ -24,11 +24,12 @@ class MoviesPopularDetail extends Component{
         .catch()
 
     let arrayFavoritos=[];
-    let recuperoStorage= localStorage.getItem("favoritos")
+    let recuperoStorage= localStorage.getItem("favoritos") 
+    console.log(recuperoStorage);
     if (recuperoStorage !==null){
         arrayFavoritos=JSON.parse(recuperoStorage);
-        this.setState({favoritos: arrayFavoritos})
-        if (arrayFavoritos.includes(this.state.id)){
+        
+        if (arrayFavoritos.includes(Number(this.state.id))){
             this.setState({
                 ButtonFavs:"Quitar de favoritos"
             })

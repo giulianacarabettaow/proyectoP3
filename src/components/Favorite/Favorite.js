@@ -10,12 +10,22 @@ class Favorite extends Component{
     }
 
     componentDidMount(){
+      this.actualizar()
+    }
+
+    actualizar=()=>{
+        console.log("ACA 2");
         let idFavoritos=[];
         let resultadoPorId =[];
         let recuperoStorage= localStorage.getItem("favoritos")
 
-        
         if (recuperoStorage !==null){
+            if(recuperoStorage.length===0){
+                this.setState({
+                    objFav:[]
+                })
+                return
+            }
             idFavoritos=JSON.parse(recuperoStorage)
         
             idFavoritos.forEach(unFav => {
@@ -32,17 +42,8 @@ class Favorite extends Component{
                 }) 
             })
         }
-    }
+       }
 
-    componentDidUpdate(){
-        // aca hay que ir recargando
-        
-        
-    }   
-
-    eliminarFav(id){
-        this.state.objFav.filter( unFav => unFav.id !== id)
-    }
 
     render(){
         console.log(this.state.objFav)
@@ -53,7 +54,7 @@ class Favorite extends Component{
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
                 <ul className="categoriesMasVistas">
-                 {this.state.objFav.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
+                 {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
                 </ul>                    
 
              </article>
@@ -66,4 +67,4 @@ class Favorite extends Component{
       
 }
 
-export default Favorite
+export default Favorite
