@@ -62,7 +62,7 @@ class Todas extends Component{
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
                 <ul className="categoriesMasVistas">
-                 {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
+                 {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
                 </ul>                    
 
             </article>
@@ -70,7 +70,7 @@ class Todas extends Component{
             <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
 
                 <ul className="categoriesMasVistas">
-                 {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id}  />  )}                
+                 {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
                 </ul>                    
 
             </article>

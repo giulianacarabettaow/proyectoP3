@@ -14,6 +14,7 @@ class Footer extends Component{
     render(){
         return(
             <React.Fragment>
+            <section className="">
             <nav>
                 <ul>
                     <Link to='/'><li>Home</li></Link>
@@ -23,7 +24,7 @@ class Footer extends Component{
             </nav>
 
             <p>Giuliana Carabetta Owens, Ignacio Tettamanti y Timoteo Herrera</p>
-
+            </section>
             </React.Fragment>
         )
     }

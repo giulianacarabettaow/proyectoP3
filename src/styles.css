@@ -7,14 +7,24 @@ h2{
     font-family: 'Staatliches', cursive;
     text-decoration: none;
     color: #C2C2C2;
-    margin-left: 25px
+    
 }
+.tituloPrincipalHome{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    color: #C2C2C2;
+    display: flex;
+    justify-content: center;
+}
+
 .listaPelis{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0%;
 }
 
 
@@ -32,6 +42,10 @@ h2{
 button:hover{
     color: #8c8f98;
 }
+
+.categories MasVistas{
+    padding: 0%;
+ }
 
 /*lo viejo*/
 
@@ -134,8 +148,9 @@ ul{
     display: flex;
     justify-content: space-around;
     list-style: none;
+    padding: 0%;
+    margin: 0%;
 }
-
 
 img{
     height: 230px;
@@ -148,6 +163,7 @@ li{
     border: 2px solid #0f030f;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .favoritelist{
@@ -294,8 +310,8 @@ main.mainfavorite{
 
 .favs-container{
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0%;
 }
 

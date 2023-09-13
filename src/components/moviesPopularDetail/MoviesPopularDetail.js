@@ -82,6 +82,7 @@ class MoviesPopularDetail extends Component{
                     <section>
                         <h2>{this.state.oneMovie.original_title}</h2>
                     <ul>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.oneMovie.poster_path}`}/>
                         <li>Calificacion:{this.state.oneMovie.vote_average}</li>
                         <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
