@@ -113,6 +113,8 @@ h1{
 .articleBuscador{
     width: 100%;
     margin: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #0f030f;
 }
 
 .formBuscador{
@@ -221,7 +223,6 @@ h3{
     margin-right: 30px;
     margin-top: 0px;
     margin-bottom: 0px;
-    border-top: 2px solid #0f030f;
 }
 
 .mainhead{

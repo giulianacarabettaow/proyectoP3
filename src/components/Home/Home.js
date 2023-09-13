@@ -39,7 +39,7 @@ class Home extends Component{
         return (
             <React.Fragment>
             <section className="section1">
-                <article><h4>ACA QUIERO PONER EL CARROUSEL</h4></article>
+                
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 

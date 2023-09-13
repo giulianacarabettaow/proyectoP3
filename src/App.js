@@ -16,13 +16,12 @@ function App() {
         <Header></Header>
         
         <Switch>
-          <Route path='/' exact component={Home}></Route>
+          <Route path='/' exact={true} component={Home}></Route>
           <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
           <Route path='/moviesRated/id/:id' component={MoviesRatedDetail}></Route>
           <Route path='/Favoritos' component={Favorite}></Route>
           <Route path='/verTodas' component={Todas}></Route>
-          <Route component={Error404}/>
-          
+          <Route path='' component={Error404}/>       
         </Switch>
 
         <Footer/>
