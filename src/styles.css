@@ -26,6 +26,7 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 12px;
     padding: 0%;
     background-color: #8c8f98;
     flex-basis: calc(20% - 10px);
