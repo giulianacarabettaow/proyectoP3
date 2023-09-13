@@ -138,9 +138,9 @@ class MoviesRated extends Component{
     render(){
         return(
         <React.Fragment>
-            <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} />
             <ul className="listaPelis">
-                <li>Name:{this.props.name} </li>
+                <li className="titleMovies">{this.props.name} </li>
+            <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} />
             
                 <li>{ this.state.extra ? this.props.descripcion : ''} </li>
                 {

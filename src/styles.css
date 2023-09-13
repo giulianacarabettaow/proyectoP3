@@ -16,7 +16,9 @@ h2{
     color: #C2C2C2;
     display: flex;
     justify-content: center;
+    margin-bottom: 25px;
 }
+
 
 .listaPelis{
     display: flex;
@@ -25,8 +27,16 @@ h2{
     justify-content: center;
     align-items: center;
     padding: 0%;
+    background-color: #8c8f98;
+    flex-basis: calc(20% - 10px);
+    max-width: calc(20% - 10px)
 }
 
+.titleMovies{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+}
 
 .botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
     color: #b8b8b8e8;
@@ -43,8 +53,11 @@ button:hover{
     color: #8c8f98;
 }
 
-.categories MasVistas{
+.categories.MasVistas{
     padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
  }
 
 /*lo viejo*/
@@ -164,6 +177,7 @@ li{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 
 .favoritelist{
@@ -188,6 +202,8 @@ h3{
 
 .article{
     width: 100%;
+    margin: 30px;
+
 }
 
 .mainhead{

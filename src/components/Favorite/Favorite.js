@@ -55,12 +55,12 @@ class Favorite extends Component{
         return(
             <React.Fragment>
             <section className="section1">
-            <article  className="articlePeliculas">
+            <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
 
-                <ul className="favs-container">
+            <ul className="categories MasVistas">
                  {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
-                </ul>     
+            </ul>     
                    
              </article>
 
