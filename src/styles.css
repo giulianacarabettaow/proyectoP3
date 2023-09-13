@@ -29,7 +29,10 @@ h2{
     padding: 0%;
     background-color: #8c8f98;
     flex-basis: calc(20% - 10px);
-    max-width: calc(20% - 10px)
+    max-width: calc(20% - 10px);
+    border: 10px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
 }
 
 .titleMovies{
@@ -60,6 +63,10 @@ button:hover{
     justify-content: space-around;
  }
 
+ .ulMenu{
+    width: 100%;
+ }
+
 /*lo viejo*/
 
 
@@ -78,7 +85,7 @@ header{
 
 .contenedorpadre{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
@@ -103,18 +110,19 @@ h1{
  
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 .buscador{
-    order: 3;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: center;    
 }
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 
 .menuprincipal{
     order: 2;
-    height: fit-content;
     width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a{
@@ -126,10 +134,10 @@ a{
 .home{
     padding: 10px;
 }
-.genres{
+.favorites{
     padding: 10px;
 }
-.favorites{
+.todas{
     padding: 10px;
 }
 

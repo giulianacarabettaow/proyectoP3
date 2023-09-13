@@ -50,12 +50,16 @@ class Todas extends Component{
         console.log(this.state)
         return (
             <React.Fragment>
-                <form action=" " onSubmit={(event)=>this.evitarSubmit(event)}>
-            <label>Busqueda de peliculas</label>
-             <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} />
-             <button type="submit">Buscar</button>
-            </form>
+                
             <section className="section1">
+
+            <article className="buscador">
+                    <form action=" " onSubmit={(event)=>this.evitarSubmit(event)}>
+                    <label>Busqueda de peliculas</label>
+                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} />
+                    <button type="submit">Buscar</button>
+                    </form>
+            </article>
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
