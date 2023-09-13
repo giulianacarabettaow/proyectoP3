@@ -59,6 +59,7 @@ button:hover{
 
 .categories.MasVistas{
     padding: 0%;
+    margin-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -70,19 +71,19 @@ button:hover{
 
 /*lo viejo*/
 
-
+/* 
 .body{
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,0.9391106784510679) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(35,2,29,1) 30%, rgba(20,1,32,1) 47%, rgba(26,1,31,1) 63%, rgba(129,8,8,0.981127485173757) 100%, rgba(121,9,9,1) 100%, rgba(56,4,24,1) 100%, rgba(121,9,9,1) 100%, rgba(155,7,7,1) 100%, rgba(155,7,7,1) 100%);
-}
-header{
+} */
+/* header{
     width: 100%;
 }
 
 .footer{
     display: block;
     width: 100%;
-}
+} */
 
 .contenedorpadre{
     display: flex;
@@ -109,11 +110,20 @@ h1{
     color: #EBEBEB; 
 }
  
-/*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
-.buscador{
+.articleBuscador{
+    width: 100%;
+    margin: 30px;
+}
+
+.formBuscador{
     display: flex;
-    justify-content: flex-start;
-    align-items: center;    
+    justify-content: flex-end;
+    padding-right: 10%;
+}
+
+input{
+    margin-right: 10px;
+    height: 22px;
 }
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
@@ -132,7 +142,7 @@ a{
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.home{
+/* .home{
     padding: 10px;
 }
 .favorites{
@@ -140,17 +150,13 @@ a{
 }
 .todas{
     padding: 10px;
-}
-
-.buscador{
-    display: flex;
-    justify-content: flex-end;
-}
+} */
 
 .placeholder{  
     background-color: transparent;
     border-radius: 37px 37px 37px 37px;
-    border: 0px solid #0f030f;
+    border: 1px solid #0f030f;
+
 }
 
 .search{
@@ -209,10 +215,13 @@ h3{
     font-family: 'PT Sans Narrow', sans-serif;
 }
 
-.article{
+.article.Peliculas{
     width: 100%;
-    margin: 30px;
-
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 2px solid #0f030f;
 }
 
 .mainhead{
@@ -491,6 +500,7 @@ section.sectionSearch{
 /*/ ARRANCA EL RESPONSIVE/*/
 
 @media (max-width: 1024px){
+
     .menuprincipal{
         width: 100%;
     }
@@ -536,8 +546,7 @@ section.sectionSearch{
 
     .tituloMovie{
         display: inline-block;
-
-}
+    }
 }
 
 @media (max-width: 650px){
