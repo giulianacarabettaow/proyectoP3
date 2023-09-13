@@ -16,6 +16,22 @@ h2{
     justify-content: center;
     align-items: center;
 }
+body{
+    background-color: #0c0622;
+}
+.listaHeader{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.logo{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    color: #C2C2C2;
+    font-size: 200%;
+    margin-left: 25px
+}
 
 
 .botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
@@ -35,11 +51,6 @@ button:hover{
 
 /*lo viejo*/
 
-
-.body{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.9391106784510679) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(35,2,29,1) 30%, rgba(20,1,32,1) 47%, rgba(26,1,31,1) 63%, rgba(129,8,8,0.981127485173757) 100%, rgba(121,9,9,1) 100%, rgba(56,4,24,1) 100%, rgba(121,9,9,1) 100%, rgba(155,7,7,1) 100%, rgba(155,7,7,1) 100%);
-}
 header{
     width: 100%;
 }
