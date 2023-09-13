@@ -22,13 +22,15 @@ class Favorite extends Component{
         let recuperoStorage= localStorage.getItem("favoritos")
 
         if (recuperoStorage !==null){
-            if(recuperoStorage.length===0){
+
+            idFavoritos=JSON.parse(recuperoStorage)
+            
+            if(idFavoritos.length === 0){
                 this.setState({
                     objFav:[]
                 })
                 return
             }
-            idFavoritos=JSON.parse(recuperoStorage)
         
             idFavoritos.forEach(unFav => {
                 fetch(`https://api.themoviedb.org/3/movie/${unFav}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
@@ -47,18 +49,19 @@ class Favorite extends Component{
        }
 
 
+
     render(){
         console.log(this.state.objFav)
         return(
             <React.Fragment>
             <section className="section1">
-            <article  className="articlePeliculas">
-            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
+            <article  className="article Peliculas">
+            <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
 
-                <ul className="categoriesMasVistas">
-                 {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id}  />  )}                
-                </ul>                    
-
+            <ul className="categories MasVistas">
+                 {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+            </ul>     
+                   
              </article>
 
             </section>
@@ -69,4 +72,4 @@ class Favorite extends Component{
       
 }
 
-export default Favorite
+export default Favorite

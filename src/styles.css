@@ -7,14 +7,33 @@ h2{
     font-family: 'Staatliches', cursive;
     text-decoration: none;
     color: #C2C2C2;
-    margin-left: 25px
+    
 }
+.tituloPrincipalHome{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+    color: #C2C2C2;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+
 .listaPelis{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 12px;
+    padding: 0%;
+    background-color: #8c8f98;
+    flex-basis: calc(20% - 10px);
+    max-width: calc(20% - 10px);
+    border: 10px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    
 }
 body{
     background-color: #0c0622;
@@ -33,6 +52,11 @@ body{
     margin-left: 25px
 }
 
+.titleMovies{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Staatliches', cursive;
+    text-decoration: none;
+}
 
 .botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
     color: #b8b8b8e8;
@@ -49,6 +73,17 @@ button:hover{
     color: #8c8f98;
 }
 
+.categories.MasVistas{
+    padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+ }
+
+ .ulMenu{
+    width: 100%;
+ }
+
 /*lo viejo*/
 
 header{
@@ -62,7 +97,7 @@ header{
 
 .contenedorpadre{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
@@ -87,18 +122,19 @@ h1{
  
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 .buscador{
-    order: 3;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: center;    
 }
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 
 .menuprincipal{
     order: 2;
-    height: fit-content;
     width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a{
@@ -110,10 +146,10 @@ a{
 .home{
     padding: 10px;
 }
-.genres{
+.favorites{
     padding: 10px;
 }
-.favorites{
+.todas{
     padding: 10px;
 }
 
@@ -145,8 +181,9 @@ ul{
     display: flex;
     justify-content: space-around;
     list-style: none;
+    padding: 0%;
+    margin: 0%;
 }
-
 
 img{
     height: 230px;
@@ -159,6 +196,8 @@ li{
     border: 2px solid #0f030f;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .favoritelist{
@@ -183,6 +222,8 @@ h3{
 
 .article{
     width: 100%;
+    margin: 30px;
+
 }
 
 .mainhead{
@@ -271,7 +312,8 @@ p{
 }
 
 li{
-    color: #C2C2C2;
+    color: #100101; 
+    /* cambie el color para ver */
 }
 
 main.mainfavorite{
@@ -304,8 +346,8 @@ main.mainfavorite{
 
 .favs-container{
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0%;
 }
 

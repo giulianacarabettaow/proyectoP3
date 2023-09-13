@@ -13,15 +13,22 @@ class Header extends Component{
     render(){
         return(
             <React.Fragment>
-            <nav>
-                <ul className="listaHeader">
-                    <Link to='/'><li className="logo">FILMSPOT</li></Link>
-                    <Link to='/'><li>Home</li></Link>
-                    <Link to='/Favoritos'><li>Favoritos</li></Link>
-                    <Link to='/verTodas'><li>Ver todas</li></Link>
+            <section className="contenedorpadre">
+
+            <article className="title">
+                <h1>Filmspot</h1>
+            </article>
+            
+            
+            <nav className="menuprincipal">
+                <ul className="ulMenu">
+                    <Link to='/'><li className="home">Home</li></Link>
+                    <Link to='/Favoritos'><li className="favorites">Favoritos</li></Link>
+                    <Link to='/verTodas'><li className="todas">Ver todas</li></Link>
                 </ul>
             </nav>
-
+            
+            </section>
             </React.Fragment>
         )
     }

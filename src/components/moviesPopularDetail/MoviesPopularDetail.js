@@ -7,19 +7,18 @@ class MoviesPopularDetail extends Component{
         super(props)
         this.state={ 
             oneMovie:[],
+            arrayGenres:[],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
-
         }
-        console.log(this.state)
+        
     }
     componentDidMount(){
        
         fetch (`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=ba0b591fbb4dcbf21e7a279fceca5d5e`)
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
-            titulo: data.original_title,
-            oneMovie: data
+            oneMovie: data,
         })) 
         
         .catch()
@@ -33,11 +32,10 @@ class MoviesPopularDetail extends Component{
         if (arrayFavoritos.includes(Number(this.state.id))){
             this.setState({
                 ButtonFavs:"Quitar de favoritos"
-            })
-        }
-    } 
-
-    }
+                })
+            }
+        } 
+     }
 
     agregarFavs(id){
         console.log(id)
@@ -74,18 +72,27 @@ class MoviesPopularDetail extends Component{
         console.log(arrayFavoritos);
     }
 
+   
 
-    render(){
+
+    render(){ 
+        console.log(this.state.oneMovie.genres);
         return(
                 <React.Fragment>
                     <section>
                         <h2>{this.state.oneMovie.original_title}</h2>
                     <ul>
-                        <li>Calificacion:{this.state.oneMovie.calificacion}</li>
+                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.oneMovie.poster_path}`}/>
+                        <li>Calificacion:{this.state.oneMovie.vote_average}</li>
                         <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
-                        <li>Sinopsis:{this.state.oneMovie.sinopsis}</li>
-                        <li>Genero:</li>
+                        <li>Sinopsis:{this.state.oneMovie.overview}</li>
+
+                        <ul>Genero:</ul>
+                        {/* {this.state.oneMovie.genres.map((genres,idx) => {
+                            <li key={genres.name+idx}> {genres.name} </li>
+                        })} No se por que no anda */}
+
                         <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 

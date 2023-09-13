@@ -87,10 +87,10 @@ class MoviesPopular extends Component{
     render(){
         return(
         <React.Fragment>
-            <img/>
-            <ul className="listaPelis">
-                <li>Name:{this.props.name} </li>
             
+            <ul className="listaPelis">
+                <li className="titleMovies">{this.props.name} </li>
+                <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} />
                 <li>{ this.state.extra ? this.props.descripcion : ''} </li>
                 {
                     this.state.extra ? 
