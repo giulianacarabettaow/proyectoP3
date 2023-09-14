@@ -1,16 +1,36 @@
-import React, {component} from "react"
+import React, { Component } from "react";
 
-class Buscador extends component{
-    constructor(props){
-        super(props)
-            this.state={
-                ValorInput:``,
-                mas:false
-            }
+class Buscador extends Component {
+    constructor(){
+        super()
+        this.state = {
+            valor: ''
+        }
     }
 
-    PreventRefresh(event){
-        event.PreventRefresh();
-        window.location.replace ("/Sresult/" + this.state.ValorInput )
+
+    EvitarSubmit(event){
+        event.preventDefault()
     }
+
+    GuardarCambios(event){
+        this.setState(
+        {
+            valor:event.target.value
+        },
+            ()=>this.props.filtro(this.state.valor)
+        )
+    }
+    
+    render(){
+        return(
+            <form onSubmit={(event) => this.evitarSubmit(event)}>
+                 <input type="text" onChange={(event) => this.guardarCambios(event)} value={this.state.valor} placeholder= 'Search'/>
+
+            </form>
+        )
+    }
+
+
 }
+export default Buscador

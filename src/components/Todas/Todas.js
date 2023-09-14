@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
+import Buscador from "../Buscador/Buscador.js";
 import '../../styles.css';
 
 
@@ -10,7 +11,7 @@ class Todas extends Component{
         this.state={ 
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
-            buscado:"",
+            
        
         }
     }
@@ -34,13 +35,14 @@ class Todas extends Component{
     
     }   
 
-    evitarSubmit (event){
+    EvitarSubmit (event){
         event.preventDefault();
+     /*    window.location.replace ("/MoviesRated/" + this.state.buscado ) */
     }
 
-    guardarDatos(eventoCampoImput){
+    guardarDatos(eventoImput){
         this.setState({
-            buscado:eventoCampoImput.target.value
+            buscado:eventoImput.target.value
         })
     }
 
@@ -54,13 +56,13 @@ class Todas extends Component{
             <section className="section1">
 
             <article className="articleBuscador">
-                    <form action=" " onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
-                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="placeholder" placeholder="Busca tu película"/>
+                    <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
+                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="buscado" placeholder="Busca tu película"/>
                     <button type="submit" className="search">Buscar</button>
                     </form>
             </article>
 
-            
+
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
