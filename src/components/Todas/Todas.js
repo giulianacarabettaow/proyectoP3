@@ -59,6 +59,8 @@ class Todas extends Component{
                     <button type="submit" className="search">Buscar</button>
                     </form>
             </article>
+
+            
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
