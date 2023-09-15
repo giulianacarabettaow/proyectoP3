@@ -51,7 +51,7 @@ class Todas extends Component{
         return (
             <React.Fragment>
                 
-            <section className="section1">
+            <section className="sectionTodas">
 
             <article className="articleBuscador">
                     {/* <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
@@ -60,42 +60,27 @@ class Todas extends Component{
                     </form> */}
                     <Buscador filtro={(nombre)=> PeliculaFiltrada(nombre)}/>
             </article>
+           
+                <article  className="article Peliculas">
+                        <h2 className= "tituloPrincipalHome">Todas las películas populares</h2>
 
+                        <ul className="categories MasVistas">
+                        {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                        </ul>                    
 
-            <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
+                    </article>
+                    <article  className="article Peliculas">
+                    <h2 className= "tituloPrincipalHome">Todas las películas aclamadas por las críticas</h2>
 
-                <ul className="categories MasVistas">
-                 {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
-                </ul>                    
-
-            </article>
-            <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
-
-                <ul className="categories MasVistas">
-                 {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
-                </ul>                    
-
-            </article>
+                        <ul className="categories MasVistas">
+                        {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
+                        </ul>                    
+                    </article>
+                
             </section>
             </React.Fragment>
 
         )}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 export default Todas

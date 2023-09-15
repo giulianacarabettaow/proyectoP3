@@ -47,7 +47,7 @@ class Home extends Component{
             <section className="section1">
                 
             <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
+            <h2 className= "tituloPrincipalHome">Películas populares</h2>
 
                 <ul className="categories MasVistas">
                  {this.state.moviesPopular.slice(0,5).map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />)}                
@@ -55,9 +55,9 @@ class Home extends Component{
 
             </article>
             <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
+            <h2 className= "tituloPrincipalHome">Películas aclamadas por las críticas</h2>
 
-                <ul className="categories MasVistas">
+                <ul className="categoriesMasVistas">
                  {this.state.moviesTopRated.slice(0,5).map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path}  />  )}                
                 </ul>                    
 
