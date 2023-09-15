@@ -1,6 +1,5 @@
 import React, {Component} from "react";
-import MoviesPopular from '../MoviesPopular/MoviesPopular';
-import MoviesRated from "../MoviesRated/MoviesRated";
+import MoviesCards from '../MoviesCard/MoviesCard';
 
 import '../../styles.css';
 
@@ -40,7 +39,7 @@ class Home extends Component{
 
 
     render(){
-        // console.log(this.state.moviesPopular);
+        // console.log(this.state.MoviesCards);
         console.log(this.state.loaded)
         return (
             
@@ -61,7 +60,7 @@ class Home extends Component{
                     <h2 className= "tituloPrincipalHome">Películas populares</h2>
         
                         <ul className="categories MasVistas">
-                         {this.state.moviesPopular.slice(0,5).map ((popular,idx)=> <MoviesPopular key={popular.id+idx} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />)}                
+                         {this.state.moviesPopular.slice(0,5).map ((popular,idx)=> <MoviesCards key={popular.id+idx} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />)}                
                         </ul>                    
         
                     </article>
@@ -69,7 +68,7 @@ class Home extends Component{
                     <h2 className= "tituloPrincipalHome">Películas aclamadas por las críticas</h2>
         
                         <ul className="categoriesMasVistas">
-                         {this.state.moviesTopRated.slice(0,5).map ((rated,idx)=> <MoviesRated key={rated.id+idx} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path}  />  )}                
+                         {this.state.moviesTopRated.slice(0,5).map ((rated,idx)=> <MoviesCards key={rated.id+idx} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path}  />  )}                
                         </ul>                    
         
                     </article>
@@ -82,18 +81,6 @@ class Home extends Component{
         )}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 export default Home

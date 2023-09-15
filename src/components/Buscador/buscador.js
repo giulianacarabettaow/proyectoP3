@@ -36,7 +36,7 @@ class Buscador extends Component {
                     className="input" 
                     placeholder="Busca tu película"/>
 
-            <Link to={`/searchResults/query/${this.state.valor}`}>
+            <Link to={`/searchResults/${this.state.valor}`}>
             <button type="submit" className="search">Buscar</button>
             </Link>
 
