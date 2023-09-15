@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">  
 
-        <Header></Header>
+        <Header/>
         
         <Switch>
           <Route path='/' exact={true} component={Home}></Route>
@@ -25,11 +25,6 @@ function App() {
         </Switch>
 
         <Footer/>
-
-
-   
-       
-   
 
     </div>
   );

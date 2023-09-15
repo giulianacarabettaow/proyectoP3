@@ -151,7 +151,7 @@ class MoviesRated extends Component{
                         <button  className="botonesHome" type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
 
                 }
-                <li><Link to={`/moviesPopular/id/${this.props.id}`}><button className="botonesHome" type='button'>Ir al detalle</button></Link></li>
+                <li><Link to={`/moviesRated/id/${this.props.id}`}><button className="botonesHome" type='button'>Ir al detalle</button></Link></li>
                 
                 <li><button className="botonesHome" onClick={()=>this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li>
             </ul>

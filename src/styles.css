@@ -137,12 +137,7 @@ h1{
     color: #EBEBEB; 
 }
  
-.articleBuscador{
-    width: 100%;
-    margin: 30px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid #0f030f;
-}
+
 
 .formBuscador{
     display: flex;
@@ -222,7 +217,21 @@ li{
     flex-wrap: wrap;
     justify-content: center;
     font-family: 'PT Sans Narrow', sans-serif;
+}
 
+.sectionTodas{
+    border-radius: 37px 37px 37px 37px;
+    border: 2px solid #0f030f;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.articleBuscador{
+    width: 100%;
+    margin: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid #0f030f;
 }
 
 .article.Peliculas{
@@ -232,7 +241,6 @@ li{
     margin-top: 0px;
     margin-bottom: 0px;
 }
-
 
 li{
     list-style: none;
