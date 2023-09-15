@@ -1,6 +1,6 @@
 import React, {Component} from "react";
+import {Link} from 'react-router-dom';
 
-// import Buscador from "../Buscador/Buscador";
 
 class SearchResults extends Component{
     constructor(props){
@@ -13,7 +13,7 @@ class SearchResults extends Component{
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.state.query}&api_key=399cd9827f714613d04693cee425808c`)
+        fetch(`https://api.themoviedb.org/3/search/movie?query=${this.props.match.params.query}&api_key=399cd9827f714613d04693cee425808c&language=en-US&page=1&include_adult=false`)
         .then((res) => res.json())
         .then((data) =>
             this.setState({
@@ -26,25 +26,27 @@ class SearchResults extends Component{
 
     render(){
         return(
-        <React.Fragment>
-        <h3>Resultado de buscado</h3>
+            <h2>Hola Ro</h2>
+        // <React.Fragment>
+        // <h3>Resultado de buscado</h3>
 
         
-        <ul>
-        {/* {this.state.resultado.map((data,idx) => 
-            {
+        // <ul>
+        // {/* {this.state.resultado.map((data,idx) => 
+        //     {
 
-                if (data.title().includes(this.props.match.params.query())){
-                return <SearchResults key={data + idx} Buscador={data} /> //creo que lo unico que me falla aca es el buscador
-                }
-            }
-        }         */}
-        </ul>
+        //         if (data.title().includes(this.props.match.params.query())){
+        //         return <SearchResults key={data + idx} Buscador={data} /> //creo que lo unico que me falla aca es el buscador
+        //         }
+        //     }
+        // }         */}
+        // </ul>
 
 
-        </React.Fragment>
+        // </React.Fragment>
         )
     }
 }
 
-export default SearchResults
+export default SearchResults;
+
