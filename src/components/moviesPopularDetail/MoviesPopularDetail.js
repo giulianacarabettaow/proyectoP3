@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../styles.css';
 
 
+
 class MoviesPopularDetail extends Component{
     constructor(props){
         super(props)
@@ -10,7 +11,9 @@ class MoviesPopularDetail extends Component{
             arrayGenres:[],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
+            loading: true
         }
+        console.log(this.state)
     }
     componentDidMount(){
        
@@ -18,6 +21,7 @@ class MoviesPopularDetail extends Component{
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
             oneMovie: data,
+            loading: false
         })) 
         .catch()
 
@@ -72,7 +76,21 @@ class MoviesPopularDetail extends Component{
 
     render(){ 
         console.log(this.state.oneMovie);
+        console.log(this.state.loading);
         return(
+
+            <div>{ this.state.loading ?
+               
+                <React.Fragment>
+                <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                    <h2 className='tituloDetalle'>Cargando...</h2>  
+                    </div>
+            
+                </section>
+                </React.Fragment> : 
+
                 <React.Fragment>
                     <section className='sectionDetalle'>
 
@@ -95,9 +113,8 @@ class MoviesPopularDetail extends Component{
 
                     </section>
                 </React.Fragment>
-            
-            )
-            }
+                } </div>
+            )}
         
 }
 

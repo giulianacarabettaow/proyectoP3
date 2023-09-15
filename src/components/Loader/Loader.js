@@ -12,7 +12,7 @@ class Loader extends Component{
     render(){
         return(
             <React.Fragment>
-                <p>Cargando</p>
+                <p>Cargando OOOOOOO</p>
             </React.Fragment>
         )
     }
