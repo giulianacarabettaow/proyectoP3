@@ -4,7 +4,7 @@ class Buscador extends Component {
     constructor(){
         super()
         this.state = {
-            valor: ''
+            resulado:[]
         }
     }
 
@@ -18,16 +18,18 @@ class Buscador extends Component {
         {
             valor:event.target.value
         },
-            ()=>this.props.filtro(this.state.valor)
+        console.log(this.state.valor)
         )
     }
     
     render(){
         return(
-            <form onSubmit={(event) => this.evitarSubmit(event)}>
-                 <input type="text" onChange={(event) => this.guardarCambios(event)} value={this.state.valor} placeholder= 'Search'/>
-
-            </form>
+            <React.Fragment>
+            <form className="formulario" onSubmit={(event)=>this.EvitarSubmit(event)}>
+                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.props.buscado} className="input" placeholder="Busca tu película"/>
+                    <button type="submit" className="search">Buscar</button>
+            </form> 
+            </React.Fragment>
         )
     }
 

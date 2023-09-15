@@ -36,14 +36,6 @@ class Todas extends Component{
     
     }   
 
-    PeliculaFiltrada(name) {
-        let arrayFiltrado = this.state.filtrado.filter(movie => movie.title.toLowerCase().includes(name.toLowerCase()))
-
-        this.setState({
-            data: arrayFiltrado
-        })
-    }
-
     
     render(){
         // console.log(this.state.moviesPopular);
@@ -54,11 +46,15 @@ class Todas extends Component{
             <section className="sectionTodas">
 
             <article className="articleBuscador">
-                    {/* <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
-                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="buscado" placeholder="Busca tu película"/>
-                    <button type="submit" className="search">Buscar</button>
-                    </form> */}
-                    <Buscador filtro={(nombre)=> PeliculaFiltrada(nombre)}/>
+                    <h3>Resultado de buscado</h3>
+                    {this.state.filtrado.map((data,idx) => {
+                        if (data.title().includes(this.props.match.params.query())){
+                            return <Buscador key={data + idx} Peliculas={data} />
+
+                        }
+                    }
+                    
+                    )}
             </article>
            
                 <article  className="article Peliculas">
