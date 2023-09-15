@@ -61,7 +61,7 @@ body{
     justify-content: center;
 }
 .botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
-    color: #b8b8b8e8;
+    color: #989898e8;
     border: 2px solid #EBEBEB;;
     border-radius: 10px;
     padding: 5px 5px;
@@ -72,7 +72,7 @@ body{
     font-family: 'Arimo', sans-serif;
 }
 button:hover{
-    color: #8c8f98;
+    color: #6a6c70;
 }
 
 .categories.MasVistas{
@@ -132,10 +132,70 @@ button:hover{
     margin-right: 0%;
     justify-content: left;
  }
- .generosDetalle{
-    
+ .generosDetalle {
+    font-family: 'Arimo', sans-serif;
+    color: #d5d1d1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color:#282531 ;
+    border-radius: 10px;
+    padding: 10px 20px 0px 0px;
+    margin-bottom: 5px;
  }
+ .generosLista{
+    color: #B8B8B8;
+    text-decoration: underline;
+ }
+.sinopsis{
+    background-color:#282531 ;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 5px;
+}
 
+.muchoDetalle{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.divGeneros{
+    font-family: 'Arimo', sans-serif;
+    color: #d5d1d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color:#282531 ;
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 10px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    
+}
+.calificacion{
+    font-family: 'Arimo', sans-serif;
+    color: #d5d1d1;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    background-color:#282531 ;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.botonDetalle{
+    color: #989898e8;
+    border: 2px solid #EBEBEB;;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 80%;   
+    font-family: 'Arimo', sans-serif;
+}
 .imgPeli{
     border-radius: 10px;
     height: 230px;

@@ -98,16 +98,25 @@ class MoviesDetail extends Component{
                         <h2 className='tituloDetalle'>{this.state.oneMovie.original_title}</h2>  
                     </div>
                     <ul className='detallePelis'>
-                        <li>Calificacion: {this.state.oneMovie.vote_average}</li>
-                        <li>Fecha de estreno: {this.state.oneMovie.release_date}</li>
-                        <li>Duracion: no sabe, no contesta.</li>
-                        <li>Sinopsis: {this.state.oneMovie.overview}</li>
+                        <div className='sinopsis'>
+                            <li>Sinopsis: {this.state.oneMovie.overview}</li>
+                        </div>
+                        <button onClick={()=>this.agregarFavs(this.state.id)}  type="button" className='botonDetalle'>{this.state.ButtonFavs}</button>
+                        <article className='muchoDetalle'>
+                        <div className='divGeneros'>
+                            <ul className='generosDetalle'>Genero/s:</ul>
+                            {this.state.oneMovie.genres?.map(genres=> <li className='generosLista'>{genres.name}</li>) } 
+                            {/* Hacer un map normal no andaba, por eso hicimos el if ternario para preguntar si existia el array.  */}
+                        </div>
 
-                        <ul className='generosDetalle'>Genero/s:</ul>
-                        {this.state.oneMovie.genres?.map(genres=> <li>{genres.name}</li>) } 
-                        {/* Hacer un map normal no andaba, por eso hicimos el if ternario para preguntar si existia el array.  */}
+                        <div className='calificacion'>
+                            <li>Calificacion: {this.state.oneMovie.vote_average}</li>
+                            <li>Fecha de estreno: {this.state.oneMovie.release_date}</li>
+                            <li>Duracion: no sabe, no contesta.</li>
+                        </div>
+                        </article>
+
                         
-                        <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 
                     </section>
