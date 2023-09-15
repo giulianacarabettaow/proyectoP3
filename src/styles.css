@@ -214,6 +214,30 @@ li{
     justify-content: space-evenly;
 }
 
+
+
+.search{
+    color: #989898e8;
+    border: 2px solid #EBEBEB;;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 80%;   
+    font-family: 'Arimo', sans-serif;
+}
+.input{
+    background-color:  #f6f3f3e8;
+    border: 2px solid #c6c5c5;;
+    border-radius: 10px;
+    padding: 5px 5px;
+    margin: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 80%;   
+    font-family: 'Arimo', sans-serif;
+}
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 .title{
     order: 1;
@@ -307,7 +331,7 @@ ul{
 
 .sectionTodas{
     border-radius: 37px 37px 37px 37px;
-    border: 2px solid #EBEBEB;;
+    border: 2px solid#282531;
     display: flex;
     flex-wrap: wrap;
     font-family: 'PT Sans Narrow', sans-serif;
@@ -317,7 +341,8 @@ ul{
     width: 100%;
     margin: 30px;
     padding-bottom: 25px;
-    border-bottom: 2px solid #EBEBEB;;
+    border-bottom: 2px solid #282531;
+
 }
 
 .article.Peliculas{

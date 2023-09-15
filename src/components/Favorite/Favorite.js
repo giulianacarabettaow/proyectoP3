@@ -52,22 +52,21 @@ class Favorite extends Component{
 
     render(){
         console.log(this.state.objFav)
-        return(
-            <React.Fragment>
-            <section className="section1">
-            <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
+            return(
+                <React.Fragment>
+                <section className="section1">
+                <article  className="article Peliculas">
+                <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
+                <ul className="categoriesMasVistas">
+                     {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                </ul>     
+                       
+                 </article>
+    
+                </section>
+                </React.Fragment>
+            )
 
-            <ul className="categoriesMasVistas">
-                 {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
-            </ul>     
-                   
-             </article>
-
-            </section>
-            </React.Fragment>
-
-        )
     }
       
 }
