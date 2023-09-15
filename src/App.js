@@ -20,8 +20,8 @@ function App() {
           <Route path='/moviesDetail/id/:id' component={MoviesDetail}></Route>
           <Route path='/Favoritos' component={Favorite}></Route>
           <Route path='/verTodas' component={Todas}></Route>
-          <Route path='' component={Error404}/>   
-          <Route path='/searchResults/query/:query' component={SearchResults}/>
+          {/* <Route path='' component={Error404}/>    */}
+          <Route path='/searchResults/:query' component={SearchResults}/>
           </Switch>
         <Footer/>
 
