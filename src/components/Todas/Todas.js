@@ -53,17 +53,16 @@ class Todas extends Component{
                 
             <section className="section1">
 
-            <article className="buscador">
-                    <form action=" " onSubmit={(event)=>this.evitarSubmit(event)}>
-                    <label>Busqueda de peliculas</label>
-                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} />
-                    <button type="submit">Buscar</button>
+            <article className="articleBuscador">
+                    <form action=" " onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
+                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="placeholder" placeholder="Busca tu película"/>
+                    <button type="submit" className="search">Buscar</button>
                     </form>
             </article>
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
 
-                <ul className="categories MasVistas">
+                <ul className="categoriesMasVistas">
                  {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
                 </ul>                    
 
@@ -71,7 +70,7 @@ class Todas extends Component{
             <article  className="article Peliculas">
             <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
 
-                <ul className="categories MasVistas">
+                <ul className="categoriesMasVistas">
                  {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
                 </ul>                    
 
