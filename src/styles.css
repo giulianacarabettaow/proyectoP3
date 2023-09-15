@@ -62,14 +62,14 @@ body{
 }
 .botonesHome{ /*ver descripcion, ocultar, agregar a favoritos, ir al detalle*/
     color: #b8b8b8e8;
-    border: 2px solid #8c8f98;
+    border: 2px solid #EBEBEB;;
     border-radius: 10px;
     padding: 5px 5px;
     margin: 2px;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 80%;   
-    font-family: 'Arimo', sans-serif;;
+    font-family: 'Arimo', sans-serif;
 }
 button:hover{
     color: #8c8f98;
@@ -112,28 +112,37 @@ button:hover{
     flex-direction: column;
  }
 
- .principalDetalle{
-    width: 30%;
-    display: flex ;
-    margin: 30px;
-    justify-content: space-around;
- }
-
  .sectionDetalle{
     border-radius: 37px 37px 37px 37px;
-    border: 2px solid #0f030f;
+    border: 2px solid#282531;
     display: flex;
     justify-content: flex-start;
 }
 .tituloDetalle{
     display: flex;
     align-items: center;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bolder;
+    color: #C2C2C2;
 }
+
+.principalDetalle{
+    width: 20%;
+    margin: 30px;
+    margin-right: 0%;
+    justify-content: left;
+ }
+ .generosDetalle{
+    
+ }
+
 .imgPeli{
     border-radius: 10px;
+    height: 230px;
 }
 .imgDetalle{
-    border: 20px solid red;
+    border-radius: 10px;
+    height: 230px;
 }
 li{
     font-family: 'Arimo', sans-serif;
@@ -202,13 +211,13 @@ a{
 .placeholder{  
     background-color: transparent;
     border-radius: 37px 37px 37px 37px;
-    border: 1px solid #0f030f;
+    border: 1px solid #EBEBEB;;
 
 }
 
 .search{
     border-radius: 37px 37px 37px 37px;
-    border: 2px solid #0f030f;
+    border: 2px solid #EBEBEB;;
 }
 
 
@@ -227,12 +236,9 @@ ul{
     margin: 0%;
 }
 
-img{
-    height: 230px;
-}
 .section1{
     border-radius: 37px 37px 37px 37px;
-    border: 2px solid #0f030f;
+    border: 2px solid#282531;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -241,7 +247,7 @@ img{
 
 .sectionTodas{
     border-radius: 37px 37px 37px 37px;
-    border: 2px solid #0f030f;
+    border: 2px solid #EBEBEB;;
     display: flex;
     flex-wrap: wrap;
     font-family: 'PT Sans Narrow', sans-serif;
@@ -251,7 +257,7 @@ img{
     width: 100%;
     margin: 30px;
     padding-bottom: 25px;
-    border-bottom: 2px solid #0f030f;
+    border-bottom: 2px solid #EBEBEB;;
 }
 
 .article.Peliculas{

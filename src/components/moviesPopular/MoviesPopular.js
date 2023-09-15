@@ -64,7 +64,7 @@ class MoviesPopular extends Component{
 
              this.setState({
             favoritos:arrayFavoritos,
-             ButtonFavs: "Agregar a favoritos"
+            ButtonFavs: "Agregar a favoritos"
          })
     
           }else{

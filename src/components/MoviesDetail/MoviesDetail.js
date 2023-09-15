@@ -10,7 +10,9 @@ class MoviesDetail extends Component{
             arrayGenres:[],
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
+            loading: true
         }
+        console.log(this.state)
     }
     componentDidMount(){
        
@@ -18,6 +20,7 @@ class MoviesDetail extends Component{
         .then(res=> res.json()) 
         .then(data=> this.setState({ 
             oneMovie: data,
+            loading: false
         })) 
         .catch()
 
@@ -72,21 +75,35 @@ class MoviesDetail extends Component{
 
     render(){ 
         console.log(this.state.oneMovie);
+        console.log(this.state.loading);
         return(
+
+            <div>{ this.state.loading ?
+               
+                <React.Fragment>
+                <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                    <h2 className='tituloDetalle'>Cargando...</h2>  
+                    </div>
+            
+                </section>
+                </React.Fragment> : 
+
                 <React.Fragment>
                     <section className='sectionDetalle'>
 
                     <div className='principalDetalle'>
-                        <img className='imgDetalle' src={`https://image.tmdb.org/t/p/w500/${this.state.oneMovie.poster_path}`}/> 
+                            <img className='imgDetalle' src={`https://image.tmdb.org/t/p/w500/${this.state.oneMovie.poster_path}`}/> 
                         <h2 className='tituloDetalle'>{this.state.oneMovie.original_title}</h2>  
                     </div>
                     <ul className='detallePelis'>
-                        <li>Calificacion:{this.state.oneMovie.vote_average}</li>
-                        <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
-                        <li>Duracion = no esta la data en la api</li>
-                        <li>Sinopsis:{this.state.oneMovie.overview}</li>
+                        <li>Calificacion: {this.state.oneMovie.vote_average}</li>
+                        <li>Fecha de estreno: {this.state.oneMovie.release_date}</li>
+                        <li>Duracion: no sabe, no contesta.</li>
+                        <li>Sinopsis: {this.state.oneMovie.overview}</li>
 
-                        <ul>Genero:</ul>
+                        <ul className='generosDetalle'>Genero/s:</ul>
                         {this.state.oneMovie.genres?.map(genres=> <li>{genres.name}</li>) } 
                         {/* Hacer un map normal no andaba, por eso hicimos el if ternario para preguntar si existia el array.  */}
                         
@@ -95,9 +112,8 @@ class MoviesDetail extends Component{
 
                     </section>
                 </React.Fragment>
-            
-            )
-            }
+                } </div>
+            )}
         
 }
 

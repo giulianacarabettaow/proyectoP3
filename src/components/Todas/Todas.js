@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
-import Buscador from "../Buscador/Buscador.js";
+import Buscador from "../Buscador/Buscador";
 import '../../styles.css';
 
 
@@ -12,7 +12,8 @@ class Todas extends Component{
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
             filtrado:[],
-       
+            loading:true, 
+            verPop: false,
         }
     }
 
@@ -29,32 +30,41 @@ class Todas extends Component{
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c71f5b75c8e3c6372967558c16ff597f')
         .then(res=>res.json())
         .then(data=>this.setState({
-            moviesTopRated: data.results
+            moviesTopRated: data.results,
+            loading:false
         }))
 
         .catch()
     
     }   
 
+    verPopular(){
+        this.setState({
+            verPop:true
+        })
+    }
+
     
     render(){
         // console.log(this.state.moviesPopular);
         console.log(this.state)
         return (
+            <div>{this.state.laoding ?  
+            <React.Fragment>
+                <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                    <h2 className='tituloDetalle'>Cargando...</h2>  
+                    </div>
+            
+                </section>
+            </React.Fragment> :
             <React.Fragment>
                 
             <section className="sectionTodas">
 
             <article className="articleBuscador">
-                    <h3>Resultado de buscado</h3>
-                    {this.state.filtrado.map((data,idx) => {
-                        if (data.title().includes(this.props.match.params.query())){
-                            return <Buscador key={data + idx} Peliculas={data} />
-
-                        }
-                    }
-                    
-                    )}
+                <Buscador/>
             </article>
            
                 <article  className="article Peliculas">
@@ -75,7 +85,7 @@ class Todas extends Component{
                 
             </section>
             </React.Fragment>
-
+            }</div>
         )}
     }
 
