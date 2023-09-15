@@ -11,7 +11,7 @@ class Todas extends Component{
         this.state={ 
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
-            
+            filtrado:[],
        
         }
     }
@@ -22,7 +22,8 @@ class Todas extends Component{
         .then(res=> res.json()) //trae los datos y los pasa a json
         .then(data=> this.setState({ //este DATA muestra los datos ya jsoneados. La info de data la sube al estado
             moviesPopular: data.results, //estos datos se guardan en el array del estado (linea 12) // estamos accediendo al objeto data de la api, metodo results
-            idPopular: data.results.id
+            idPopular: data.results.id,
+            filtrado:data.results
         })) 
 
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c71f5b75c8e3c6372967558c16ff597f')
@@ -35,14 +36,11 @@ class Todas extends Component{
     
     }   
 
-    EvitarSubmit (event){
-        event.preventDefault();
-     /*    window.location.replace ("/MoviesRated/" + this.state.buscado ) */
-    }
+    PeliculaFiltrada(name) {
+        let arrayFiltrado = this.state.filtrado.filter(movie => movie.title.toLowerCase().includes(name.toLowerCase()))
 
-    guardarDatos(eventoImput){
         this.setState({
-            buscado:eventoImput.target.value
+            data: arrayFiltrado
         })
     }
 
@@ -56,10 +54,11 @@ class Todas extends Component{
             <section className="section1">
 
             <article className="articleBuscador">
-                    <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
+                    {/* <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
                     <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="buscado" placeholder="Busca tu película"/>
                     <button type="submit" className="search">Buscar</button>
-                    </form>
+                    </form> */}
+                    <Buscador filtro={(nombre)=> PeliculaFiltrada(nombre)}/>
             </article>
 
 
