@@ -27,6 +27,7 @@
     padding: 0%;
     flex-basis: calc(20% - 10px);
     max-width: calc(20% - 10px);
+    color:#EBEBEB;
     
 }
 .titleMovies{
@@ -134,21 +135,10 @@ button:hover{
 .imgDetalle{
     border: 20px solid red;
 }
-/*lo viejo*/
-
-/* 
-.body{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,0.9391106784510679) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(121,9,9,1) 0%, rgba(35,2,29,1) 30%, rgba(20,1,32,1) 47%, rgba(26,1,31,1) 63%, rgba(129,8,8,0.981127485173757) 100%, rgba(121,9,9,1) 100%, rgba(56,4,24,1) 100%, rgba(121,9,9,1) 100%, rgba(155,7,7,1) 100%, rgba(155,7,7,1) 100%);
-} */
-/* header{
-    width: 100%;
+li{
+    font-family: 'Arimo', sans-serif;
+    color: #d5d1d1;
 }
-
-.footer{
-    display: block;
-    width: 100%;
-} */
 
 .contenedorpadre{
     display: flex;
@@ -240,9 +230,6 @@ ul{
 img{
     height: 230px;
 }
-li{
-    margin: 0px 5px ;
-}
 .section1{
     border-radius: 37px 37px 37px 37px;
     border: 2px solid #0f030f;
@@ -275,21 +262,11 @@ li{
     margin-bottom: 0px;
 }
 
-li{
-    list-style: none;
-    color: #100101; 
-
-}
 
 p{
     color: #EBEBEB;
     font-family: 'PT Sans Narrow', sans-serif;
 }
-
-.categories li{
-    max-width: 150px;
-    }
-
 /*/ ARRANCA EL RESPONSIVE/*/
 
 @media (max-width: 1024px){
