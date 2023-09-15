@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
-import Loader from "../Loader/Loader";
 
 import '../../styles.css';
 

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
 class Buscador extends Component {
     constructor(){
@@ -11,9 +12,10 @@ class Buscador extends Component {
 
     EvitarSubmit(event){
         event.preventDefault()
+        console.log('No me mandé')
     }
 
-    GuardarCambios(event){
+    GuardarValorIngresado(event){
         this.setState({
             valor:event.target.value
         })
@@ -23,9 +25,21 @@ class Buscador extends Component {
     render(){
         return(
             <React.Fragment>
-            <form className="formulario" onSubmit={(event)=>this.EvitarSubmit(event)}>
-                    <input type="text" onChange={(event)=>this.GuardarCambios(event)} value={this.props.buscado} className="input" placeholder="Busca tu película"/>
-                    <button type="submit" className="search">Buscar</button>
+            <form className="formulario" action='/searchResults/query/:query' method="get" onSubmit={(event)=>this.EvitarSubmit(event)}>
+
+                    <input 
+                    type='text' 
+                    name='buscador'
+                    id=''
+                    value={this.state.valor}
+                    onChange={(event)=>this.GuardarValorIngresado(event)}  
+                    className="input" 
+                    placeholder="Busca tu película"/>
+
+            {/* <Link to={`/searchResults/query/${this.state.valor}`}> */}
+            <button type="submit" className="search">Buscar</button>
+            {/* </Link> */}
+
             </form> 
             </React.Fragment>
         )

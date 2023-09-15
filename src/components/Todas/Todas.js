@@ -12,9 +12,10 @@ class Todas extends Component{
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
             filtrado:[],
-            loadin
+            loading:true, 
+            verPop: false,
         }
-
+    }
 
     componentDidMount(){
         //buscamos los datos de la API
@@ -37,14 +38,19 @@ class Todas extends Component{
     
     }   
 
+    verPopular(){
+        this.setState({
+            verPop:true
+        })
+    }
+
     
     render(){
         // console.log(this.state.moviesPopular);
         console.log(this.state)
         return (
-
-
-            <div>{this.state.laoding ?  <React.Fragment>
+            <div>{this.state.laoding ?  
+            <React.Fragment>
                 <section className='sectionDetalle'>
 
                     <div className='principalDetalle'>
@@ -52,7 +58,7 @@ class Todas extends Component{
                     </div>
             
                 </section>
-                </React.Fragment> :
+            </React.Fragment> :
             <React.Fragment>
                 
             <section className="sectionTodas">

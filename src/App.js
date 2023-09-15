@@ -21,7 +21,7 @@ function App() {
           <Route path='/Favoritos' component={Favorite}></Route>
           <Route path='/verTodas' component={Todas}></Route>
           <Route path='' component={Error404}/>       
-          <Route path='/sResults' component={SearchResults} />
+          <Route path='/searchResults/query/:query' component={SearchResults} />
         </Switch>
 
         <Footer/>
