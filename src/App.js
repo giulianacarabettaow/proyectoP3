@@ -2,8 +2,7 @@ import React from "react";
 import { BrowserRouter,Switch, Route, Link} from "react-router-dom";
 import Header from './components/Header/Header';
 import Home from "./components/Home/Home";
-import MoviesPopularDetail from './components/MoviesPopularDetail/MoviesPopularDetail';
-import MoviesRatedDetail from './components/MoviesRatedDetail/MoviesRatedDetail';
+import MoviesDetail from "./components/MoviesDetail/MoviesDetail";
 import Favorite from './components/Favorite/Favorite';
 import Todas from './components/Todas/Todas';
 import Footer from "./components/Footer/Footer";
@@ -18,8 +17,7 @@ function App() {
         
         <Switch>
           <Route path='/' exact={true} component={Home}></Route>
-          <Route path='/moviesPopular/id/:id' component={MoviesPopularDetail}></Route>
-          <Route path='/moviesRated/id/:id' component={MoviesRatedDetail}></Route>
+          <Route path='/moviesDetail/id/:id' component={MoviesDetail}></Route>
           <Route path='/Favoritos' component={Favorite}></Route>
           <Route path='/verTodas' component={Todas}></Route>
           <Route path='' component={Error404}/>       

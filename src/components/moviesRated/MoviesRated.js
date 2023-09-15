@@ -86,8 +86,8 @@ class MoviesRated extends Component{
         return(
         <React.Fragment>
             <ul className="listaPelis">
-                <li className="titleMovies">{this.props.name} </li>
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} className="imgPeli"/>
+                <li className="titleMovies">{this.props.name} </li>
             
                 <li>{ this.state.extra ? this.props.descripcion : ''} </li>
                 {
@@ -98,7 +98,7 @@ class MoviesRated extends Component{
                         <button  className="botonesHome" type="button" onClick={()=>this.verDescricion()} >Ver descipcion</button>
 
                 }
-                <li><Link to={`/moviesRated/id/${this.props.id}`}><button className="botonesHome" type='button'>Ir al detalle</button></Link></li>
+                <li><Link to={`/moviesDetail/id/${this.props.id}`}><button className="botonesHome" type='button'>Ir al detalle</button></Link></li>
                 
                 <li><button className="botonesHome" onClick={()=>this.agregarFavs(this.props.id)}type="button">{this.state.ButtonFavs}</button></li>
             </ul>

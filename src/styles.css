@@ -2,23 +2,21 @@
     box-sizing: border-box;
 }
 /*lo que agregamos o usamos en p3*/
-h2{
-    font-family: 'Noto Sans JP', sans-serif;
+/* h2{
+
     font-family: 'Staatliches', cursive;
     text-decoration: none;
     color: #C2C2C2;
     
-}
+} */
 .tituloPrincipalHome{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Arimo', sans-serif;
     text-decoration: none;
     color: #C2C2C2;
     display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
+    justify-content: left;
+    margin-bottom: 10px;
 }
-
 .listaPelis{
     display: flex;
     flex-wrap: wrap;
@@ -27,17 +25,14 @@ h2{
     align-items: center;
     margin-top: 12px;
     padding: 0%;
-    background-color: #282531;
     flex-basis: calc(20% - 10px);
     max-width: calc(20% - 10px);
-    border: 10px solid #282531;
-    border-radius: 10px;
     
 }
 .titleMovies{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Staatliches', cursive;
-    text-decoration: none;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bolder;
+    color: #C2C2C2;
 }
 
 
@@ -50,8 +45,8 @@ body{
     flex-direction: row;
 }
 .logo{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Staatliches', cursive;
+    /* font-family: 'Staatliches', cursive; */
+    font-family: 'Arimo', sans-serif;
     text-decoration: none;
     color: #C2C2C2;
     font-size: 200%;
@@ -68,12 +63,12 @@ body{
     color: #b8b8b8e8;
     border: 2px solid #8c8f98;
     border-radius: 10px;
-    padding: 2px 3px;
+    padding: 5px 5px;
     margin: 2px;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    font-size: small;  
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 80%;   
+    font-family: 'Arimo', sans-serif;;
 }
 button:hover{
     color: #8c8f98;
@@ -85,10 +80,28 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    background-color: #282531;
+    border-radius: 10px;
+    padding-bottom: 5px;
+ }
+ .categoriesMasVistas{
+    padding: 0%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #282531;
+    border-radius: 10px;
+    padding-bottom: 5px;
  }
 
  .ulMenu{
     width: 100%;
+ }
+ .liMenu{
+    font-family: 'Arimo', sans-serif;
+    font-size: 90%;
+    color: #d5d1d1;
  }
 
  .detallePelis{
@@ -114,6 +127,9 @@ button:hover{
 .tituloDetalle{
     display: flex;
     align-items: center;
+}
+.imgPeli{
+    border-radius: 10px;
 }
 .imgDetalle{
     border: 20px solid red;
@@ -148,15 +164,10 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Staatliches', cursive;
     color: #0f030f;
-}
-
-h1{
-    font-family: 'Noto Sans JP', sans-serif;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Arimo', sans-serif;
     color: #EBEBEB; 
+    font-weight:bolder;
 }
  
 

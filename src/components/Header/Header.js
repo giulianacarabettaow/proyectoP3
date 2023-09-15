@@ -22,9 +22,9 @@ class Header extends Component{
             
             <nav className="menuprincipal">
                 <ul className="ulMenu">
-                    <Link to='/'><li className="home">Home</li></Link>
-                    <Link to='/Favoritos'><li className="favorites">Favoritos</li></Link>
-                    <Link to='/verTodas'><li className="todas">Ver todas</li></Link>
+                    <Link to='/'><li className="liMenu">Home</li></Link>
+                    <Link to='/Favoritos'><li className="liMenu">Favoritos</li></Link>
+                    <Link to='/verTodas'><li className="liMenu">Ver todas</li></Link>
                 </ul>
             </nav>
             
