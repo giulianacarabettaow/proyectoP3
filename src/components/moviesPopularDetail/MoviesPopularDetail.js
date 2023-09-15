@@ -11,7 +11,6 @@ class MoviesPopularDetail extends Component{
             id: props.match.params.id,
             ButtonFavs:"Agregar a favoritos",
         }
-        
     }
     componentDidMount(){
        
@@ -20,14 +19,13 @@ class MoviesPopularDetail extends Component{
         .then(data=> this.setState({ 
             oneMovie: data,
         })) 
-        
         .catch()
 
-    let arrayFavoritos=[];
-    let recuperoStorage= localStorage.getItem("favoritos") 
-    console.log(recuperoStorage);
-    if (recuperoStorage !==null){
-        arrayFavoritos=JSON.parse(recuperoStorage);
+        let arrayFavoritos=[];
+        let recuperoStorage= localStorage.getItem("favoritos") 
+            console.log(recuperoStorage);
+        if (recuperoStorage !==null){
+            arrayFavoritos=JSON.parse(recuperoStorage);
         
         if (arrayFavoritos.includes(Number(this.state.id))){
             this.setState({
@@ -72,27 +70,26 @@ class MoviesPopularDetail extends Component{
         console.log(arrayFavoritos);
     }
 
-   
-
-
     render(){ 
-        console.log(this.state.oneMovie.genres);
+        console.log(this.state.oneMovie);
         return(
                 <React.Fragment>
-                    <section>
-                        <h2>{this.state.oneMovie.original_title}</h2>
-                    <ul>
-                        <img src={`https://image.tmdb.org/t/p/w342/${this.state.oneMovie.poster_path}`}/>
+                    <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                        <img className='imgDetalle' src={`https://image.tmdb.org/t/p/w500/${this.state.oneMovie.poster_path}`}/> 
+                        <h2 className='tituloDetalle'>{this.state.oneMovie.original_title}</h2>  
+                    </div>
+                    <ul className='detallePelis'>
                         <li>Calificacion:{this.state.oneMovie.vote_average}</li>
                         <li>Fecha de estreno:{this.state.oneMovie.release_date}</li>
                         <li>Duracion = no esta la data en la api</li>
                         <li>Sinopsis:{this.state.oneMovie.overview}</li>
 
                         <ul>Genero:</ul>
-                        {/* {this.state.oneMovie.genres.map((genres,idx) => {
-                            <li key={genres.name+idx}> {genres.name} </li>
-                        })} No se por que no anda */}
-
+                        {this.state.oneMovie.genres?.map(genres=> <li>{genres.name}</li>) } 
+                        {/* Hacer un map normal no andaba, por eso hicimos el if ternario para preguntar si existia el array.  */}
+                        
                         <button onClick={()=>this.agregarFavs(this.state.id)}  type="button">{this.state.ButtonFavs}</button>
                     </ul>
 

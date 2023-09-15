@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
+import Buscador from "../Buscador/Buscador.js";
 import '../../styles.css';
 
 
@@ -10,7 +11,7 @@ class Todas extends Component{
         this.state={ 
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
-            buscado:"",
+            
        
         }
     }
@@ -34,13 +35,14 @@ class Todas extends Component{
     
     }   
 
-    evitarSubmit (event){
+    EvitarSubmit (event){
         event.preventDefault();
+     /*    window.location.replace ("/MoviesRated/" + this.state.buscado ) */
     }
 
-    guardarDatos(eventoCampoImput){
+    guardarDatos(eventoImput){
         this.setState({
-            buscado:eventoCampoImput.target.value
+            buscado:eventoImput.target.value
         })
     }
 
@@ -51,48 +53,35 @@ class Todas extends Component{
         return (
             <React.Fragment>
                 
-            <section className="section1">
+            <section className="sectionTodas">
 
             <article className="articleBuscador">
-                    <form action=" " onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
-                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="placeholder" placeholder="Busca tu película"/>
+                    <form onSubmit={(event)=>this.evitarSubmit(event)} className="formBuscador">
+                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.state.buscado} className="buscado" placeholder="Busca tu película"/>
                     <button type="submit" className="search">Buscar</button>
                     </form>
             </article>
-            <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más visto en películas</h2>
+           
+                <article  className="article Peliculas">
+                        <h2 className= "tituloPrincipalHome">Todas las películas populares</h2>
 
-                <ul className="categoriesMasVistas">
-                 {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
-                </ul>                    
+                        <ul className="categories MasVistas">
+                        {this.state.moviesPopular.map ((popular,idx)=> <MoviesPopular key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                        </ul>                    
 
-            </article>
-            <article  className="article Peliculas">
-            <h2 className= "tituloPrincipalHome">Lo más valorado películas</h2>
+                    </article>
+                    <article  className="article Peliculas">
+                    <h2 className= "tituloPrincipalHome">Todas las películas aclamadas por las críticas</h2>
 
-                <ul className="categoriesMasVistas">
-                 {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
-                </ul>                    
-
-            </article>
+                        <ul className="categories MasVistas">
+                        {this.state.moviesTopRated.map ((rated,idx)=> <MoviesRated key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
+                        </ul>                    
+                    </article>
+                
             </section>
             </React.Fragment>
 
         )}
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 export default Todas
