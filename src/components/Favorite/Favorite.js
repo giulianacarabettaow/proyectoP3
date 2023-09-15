@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import MoviesPopular from '../MoviesPopular/MoviesPopular'
+import MoviesCards from '../MoviesCard/MoviesCard'
 import '../../styles.css';
 
 class Favorite extends Component{
@@ -58,7 +58,7 @@ class Favorite extends Component{
                 <article  className="article Peliculas">
                 <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
                 <ul className="categoriesMasVistas">
-                     {this.state.objFav.map ((popular,idx)=> <MoviesPopular handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                     {this.state.objFav.map ((popular,idx)=> <MoviesCards handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
                 </ul>     
                        
                  </article>
@@ -67,7 +67,7 @@ class Favorite extends Component{
                 </React.Fragment>
             )
 
-    }
+            }
       
 }
 

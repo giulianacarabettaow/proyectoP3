@@ -14,9 +14,9 @@ class Footer extends Component{
     render(){
         return(
             <React.Fragment>
-            <section className="">
+            <section className="footer">
             <nav>
-                <ul>
+                <ul className="ulMenu">
                     <Link to='/'><li>Home</li></Link>
                     <Link to='/Favoritos'><li>Favoritos</li></Link>
                     <Link to='/verTodas'><li>Ver todas</li></Link>

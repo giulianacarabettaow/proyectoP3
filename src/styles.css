@@ -54,6 +54,16 @@ body{
     margin-left: 25px
 }
 
+.footer{
+    padding: 20px;
+    font-family: 'Arimo', sans-serif;
+    color: #C2C2C2;
+}
+.footer p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 .botonesListaPelis{
     display: flex;
     flex-wrap: wrap;
@@ -81,7 +91,7 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #282531;
+    background-color:  #17112a;
     border-radius: 10px;
     padding-bottom: 5px;
  }
@@ -91,15 +101,13 @@ button:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background-color: #282531;
+    background-color: #17112a;
     border-radius: 10px;
     padding-bottom: 5px;
  }
 
  .ulMenu{
     width: 100%;
- }
- .liMenu{
     font-family: 'Arimo', sans-serif;
     font-size: 90%;
     color: #d5d1d1;
@@ -114,6 +122,7 @@ button:hover{
 
  .sectionDetalle{
     border-radius: 37px 37px 37px 37px;
+    background-color: #17112a ;
     border: 2px solid#282531;
     display: flex;
     justify-content: flex-start;
@@ -131,6 +140,7 @@ button:hover{
     margin: 30px;
     margin-right: 0%;
     justify-content: left;
+    
  }
  .generosDetalle {
     font-family: 'Arimo', sans-serif;
@@ -199,10 +209,13 @@ button:hover{
 .imgPeli{
     border-radius: 10px;
     height: 230px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 5px;
 }
 .imgDetalle{
     border-radius: 10px;
     height: 230px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 li{
     font-family: 'Arimo', sans-serif;
@@ -228,8 +241,9 @@ li{
     font-family: 'Arimo', sans-serif;
 }
 .input{
-    background-color:  #f6f3f3e8;
-    border: 2px solid #c6c5c5;;
+    width: 95%;
+    background-color:  #282531;
+    border: 2px solid #33313c;
     border-radius: 10px;
     padding: 5px 5px;
     margin: 2px;
@@ -237,6 +251,8 @@ li{
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     font-size: 80%;   
     font-family: 'Arimo', sans-serif;
+    margin-right: 10px;
+    height: 30px;
 }
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 .title{
@@ -261,10 +277,7 @@ li{
     padding-right: 10%;
 }
 
-input{
-    margin-right: 10px;
-    height: 22px;
-}
+
 
 /*/ Agregamos propiedad "Order" para acomodar la estructura en 1024px /*/
 
@@ -354,10 +367,7 @@ ul{
 }
 
 
-p{
-    color: #EBEBEB;
-    font-family: 'PT Sans Narrow', sans-serif;
-}
+
 /*/ ARRANCA EL RESPONSIVE/*/
 
 @media (max-width: 1024px){

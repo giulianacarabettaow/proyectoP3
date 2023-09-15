@@ -2,10 +2,11 @@ import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import '../../styles.css';
 
-class MoviesRated extends Component{
+class MoviesCards extends Component{
     constructor(props){
         super(props)
         this.state={
+            // MoviesCards: this.props.MoviesCards, no va creo
             extra: false,
             ButtonFavs:"Agregar a favoritos",
             favoritos:[],
@@ -58,11 +59,12 @@ class MoviesRated extends Component{
          }
         
          if (arrayFavoritos.includes(id)){
-             arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) 
+             //en el caso del que el id este en el array queremos sacar el id
+             arrayFavoritos=arrayFavoritos.filter(unId => unId !==id) // el primer parametro es cada elemento del array 'unId'
 
              this.setState({
             favoritos:arrayFavoritos,
-             ButtonFavs: "Agregar a favoritos"
+            ButtonFavs: "Agregar a favoritos"
          })
     
           }else{
@@ -84,7 +86,7 @@ class MoviesRated extends Component{
 
     render(){
         return(
-        <React.Fragment>
+            <React.Fragment>
             <ul className="listaPelis">
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} className="imgPeli"/>
                 <li className="titleMovies">{this.props.name} </li>
@@ -108,4 +110,4 @@ class MoviesRated extends Component{
     }
 }
 
-export default MoviesRated
+export default MoviesCards
