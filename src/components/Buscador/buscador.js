@@ -14,12 +14,10 @@ class Buscador extends Component {
     }
 
     GuardarCambios(event){
-        this.setState(
-        {
+        this.setState({
             valor:event.target.value
-        },
+        })
         console.log(this.state.valor)
-        )
     }
     
     render(){
@@ -32,7 +30,5 @@ class Buscador extends Component {
             </React.Fragment>
         )
     }
-
-
 }
 export default Buscador

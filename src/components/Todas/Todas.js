@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import MoviesPopular from '../MoviesPopular/MoviesPopular';
 import MoviesRated from "../MoviesRated/MoviesRated";
-import Buscador from "../Buscador/Buscador.js";
+import Buscador from "../Buscador/Buscador";
 import '../../styles.css';
 
 
@@ -12,6 +12,7 @@ class Todas extends Component{
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
             filtrado:[],
+            laoding: true
        
         }
     }
@@ -22,14 +23,16 @@ class Todas extends Component{
         .then(res=> res.json()) //trae los datos y los pasa a json
         .then(data=> this.setState({ //este DATA muestra los datos ya jsoneados. La info de data la sube al estado
             moviesPopular: data.results, //estos datos se guardan en el array del estado (linea 12) // estamos accediendo al objeto data de la api, metodo results
-            idPopular: data.results.id,
-            filtrado:data.results
+            // idPopular: data.results.id, lo podemos sacar eso creo
+            filtrado:data.results,
+            laoding: false
         })) 
 
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c71f5b75c8e3c6372967558c16ff597f')
         .then(res=>res.json())
         .then(data=>this.setState({
-            moviesTopRated: data.results
+            moviesTopRated: data.results,
+            loading:false
         }))
 
         .catch()
@@ -41,6 +44,17 @@ class Todas extends Component{
         // console.log(this.state.moviesPopular);
         console.log(this.state)
         return (
+
+
+            <div>{this.state.laoding ?  <React.Fragment>
+                <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                    <h2 className='tituloDetalle'>Cargando...</h2>  
+                    </div>
+            
+                </section>
+                </React.Fragment> :
             <React.Fragment>
                 
             <section className="sectionTodas">
@@ -75,7 +89,7 @@ class Todas extends Component{
                 
             </section>
             </React.Fragment>
-
+            }</div>
         )}
     }
 

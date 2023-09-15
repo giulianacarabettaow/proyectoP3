@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import '../../styles.css';
 
 
-
-class MoviesPopularDetail extends Component{
+class MoviesDetail extends Component{
     constructor(props){
         super(props)
         this.state={ 
@@ -118,4 +117,4 @@ class MoviesPopularDetail extends Component{
         
 }
 
-export default MoviesPopularDetail
+export default MoviesDetail

@@ -45,7 +45,16 @@ class Home extends Component{
         console.log(this.state.loaded)
         return (
             
-            <div>{ this.state.loading ? <Loader/> : 
+            <div>{ this.state.loading ? 
+                <React.Fragment>
+                <section className='sectionDetalle'>
+
+                    <div className='principalDetalle'>
+                    <h2 className='tituloDetalle'>Cargando...</h2>  
+                    </div>
+            
+                </section>
+                </React.Fragment>  : 
                 <React.Fragment>
                     <section className="section1">
                 
