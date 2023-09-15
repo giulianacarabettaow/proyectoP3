@@ -12,10 +12,9 @@ class Todas extends Component{
             moviesPopular:[], //aca van a aparecer las peliculas en el objeto literal de state dentro del array peliculas
             moviesTopRated:[],
             filtrado:[],
-            laoding: true
-       
+            loadin
         }
-    }
+
 
     componentDidMount(){
         //buscamos los datos de la API
@@ -23,9 +22,8 @@ class Todas extends Component{
         .then(res=> res.json()) //trae los datos y los pasa a json
         .then(data=> this.setState({ //este DATA muestra los datos ya jsoneados. La info de data la sube al estado
             moviesPopular: data.results, //estos datos se guardan en el array del estado (linea 12) // estamos accediendo al objeto data de la api, metodo results
-            // idPopular: data.results.id, lo podemos sacar eso creo
-            filtrado:data.results,
-            laoding: false
+            idPopular: data.results.id,
+            filtrado:data.results
         })) 
 
         fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=c71f5b75c8e3c6372967558c16ff597f')
@@ -60,15 +58,7 @@ class Todas extends Component{
             <section className="sectionTodas">
 
             <article className="articleBuscador">
-                    <h3>Resultado de buscado</h3>
-                    {this.state.filtrado.map((data,idx) => {
-                        if (data.title().includes(this.props.match.params.query())){
-                            return <Buscador key={data + idx} Peliculas={data} />
-
-                        }
-                    }
-                    
-                    )}
+                <Buscador/>
             </article>
            
                 <article  className="article Peliculas">

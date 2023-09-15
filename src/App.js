@@ -7,6 +7,7 @@ import Favorite from './components/Favorite/Favorite';
 import Todas from './components/Todas/Todas';
 import Footer from "./components/Footer/Footer";
 import Error404 from './components/Error404/Error404';
+import SearchResults from "./components/Sresults/Sresults";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/Favoritos' component={Favorite}></Route>
           <Route path='/verTodas' component={Todas}></Route>
           <Route path='' component={Error404}/>       
+          <Route path='/sResults' component={SearchResults} />
         </Switch>
 
         <Footer/>

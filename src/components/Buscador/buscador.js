@@ -24,7 +24,7 @@ class Buscador extends Component {
         return(
             <React.Fragment>
             <form className="formulario" onSubmit={(event)=>this.EvitarSubmit(event)}>
-                    <input type="text" onChange={(event)=>this.guardarDatos(event)} value={this.props.buscado} className="input" placeholder="Busca tu película"/>
+                    <input type="text" onChange={(event)=>this.GuardarCambios(event)} value={this.props.buscado} className="input" placeholder="Busca tu película"/>
                     <button type="submit" className="search">Buscar</button>
             </form> 
             </React.Fragment>
