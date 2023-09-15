@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-// import Buscador from "../Buscador/Buscador";
+import Buscador from "../Buscador/Buscador";
 
 class SearchResults extends Component{
     constructor(props){

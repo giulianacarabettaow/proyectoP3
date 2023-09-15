@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom';
 
 class Buscador extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            resulado:[]
+            valor:''
         }
     }
 
@@ -15,11 +15,11 @@ class Buscador extends Component {
         console.log('No me mandé')
     }
 
-    GuardarValorIngresado(event){
+    GuardarValorIngresado(campoInput){
         this.setState({
-            valor:event.target.value
-        })
-        console.log(this.state.valor)
+            valor:campoInput.target.value //la propiedad target busca partes del evento. Es una propiedad que esta adentro del obj literal del evento
+        },()=>console.log(this.state.valor) //haces el console en el seg parametro del setState. LE estoy diciendo: Ejecutate solamente cuando el estado este actualizado. 
+        )
     }
     
     render(){
@@ -36,9 +36,9 @@ class Buscador extends Component {
                     className="input" 
                     placeholder="Busca tu película"/>
 
-            {/* <Link to={`/searchResults/query/${this.state.valor}`}> */}
+            <Link to={`/searchResults/query/${this.state.valor}`}>
             <button type="submit" className="search">Buscar</button>
-            {/* </Link> */}
+            </Link>
 
             </form> 
             </React.Fragment>
