@@ -15,9 +15,6 @@ class Header extends Component{
         return(
             <React.Fragment>
             <section className="contenedorpadre">
-            <article className="messiLogo">
-                <img src="../../public/messiLogo.png" alt="messi" className="messi"/>
-            </article>
 
             <article className="title">
                 <h1>Filmspot</h1>
