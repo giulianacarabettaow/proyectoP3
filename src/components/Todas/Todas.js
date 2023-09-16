@@ -70,7 +70,7 @@ class Todas extends Component{
                         <h2 className= "tituloPrincipalHome">Todas las películas populares</h2>
 
                         <ul className="categories MasVistas">
-                        {this.state.MoviesCards.map ((popular,idx)=> <MoviesCards key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                        {this.state.MoviesCards.map ((popular,idx)=> <MoviesCards key={popular.title+idx} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
                         </ul>                    
 
                     </article>
@@ -78,7 +78,7 @@ class Todas extends Component{
                     <h2 className= "tituloPrincipalHome">Todas las películas aclamadas por las críticas</h2>
 
                         <ul className="categories MasVistas">
-                        {this.state.moviesTopRated.map ((rated,idx)=> <MoviesCards key={rated.id} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
+                        {this.state.moviesTopRated.map ((rated,idx)=> <MoviesCards key={rated.title+idx} name={rated.title} descripcion={rated.overview} id={rated.id} img={rated.poster_path} />  )}                
                         </ul>                    
                     </article>
                 

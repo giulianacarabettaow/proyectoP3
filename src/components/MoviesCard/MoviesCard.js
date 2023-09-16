@@ -7,7 +7,7 @@ class MoviesCards extends Component{
         super(props)
         this.state={
             // MoviesCards: this.props.MoviesCards, no va creo
-            extra: false,
+            show: false,
             ButtonFavs:"Agregar a favoritos",
             favoritos:[],
             id:props.id 
@@ -40,12 +40,12 @@ class MoviesCards extends Component{
 
     verDescricion(){
         this.setState({
-            extra: true
+            show: true
     })}
 
     noVerDescricion(){
         this.setState({
-            extra: false
+            show: false
     })}
     
      agregarFavs(id){
@@ -91,9 +91,9 @@ class MoviesCards extends Component{
             <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} className="imgPeli"/>
                 <li className="titleMovies">{this.props.name} </li>
             
-                <li>{ this.state.extra ? this.props.descripcion : ''} </li>
+                <li>{ this.state.show ? this.props.descripcion : ''} </li>
                 {
-                    this.state.extra ? 
+                    this.state.show ? 
 
                         <button className="botonesHome" type="button" onClick={()=>this.noVerDescricion()} >Ocultar</button>
                     :

@@ -61,7 +61,7 @@ class Favorite extends Component{
                     <article  className="article Peliculas">
                     <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
                     <ul className="categoriesMasVistas">
-                         {this.state.objFav.map ((popular,idx)=> <MoviesCards handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                         {this.state.objFav.map ((popular,idx)=> <MoviesCards handle={this.actualizar} key={popular.title+idx} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
                     </ul>       
                     </article>
                     </section>
