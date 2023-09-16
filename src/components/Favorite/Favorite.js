@@ -54,17 +54,28 @@ class Favorite extends Component{
         console.log(this.state.objFav)
             return(
                 <React.Fragment>
-                <section className="section1">
-                <article  className="article Peliculas">
-                <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
-                <ul className="categoriesMasVistas">
-                     {this.state.objFav.map ((popular,idx)=> <MoviesCards handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
-                </ul>     
-                       
-                 </article>
-    
-                </section>
-                </React.Fragment>
+
+                {this.state.objFav.length > 0 ?  
+                
+                    <section className="section1">
+                    <article  className="article Peliculas">
+                    <h2 className= "tituloPrincipalHome">Tus favoritos</h2>
+                    <ul className="categoriesMasVistas">
+                         {this.state.objFav.map ((popular,idx)=> <MoviesCards handle={this.actualizar} key={popular.id} name={popular.title} descripcion={popular.overview} id={popular.id} img={popular.poster_path} />  )}                
+                    </ul>       
+                    </article>
+                    </section>
+                   
+                    : 
+                    <section className="section1">
+                    <article  className="article Peliculas">
+                    <h2 className= "tituloPrincipalHome">No has agregado películas a favoritos</h2>
+
+                    </article>
+                    </section>
+                } 
+             </React.Fragment>
+
             )
 
             }

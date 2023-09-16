@@ -24,6 +24,13 @@ class SearchResults extends Component{
         .catch(error => console.log(error));
     }
 
+    controlarCambios(event){
+        this.setState({
+            valor: event.target.value
+        });
+        console.log(this.state.valor)
+    }
+
     render(){
         console.log(this.state.resultado.id)
         return(
@@ -42,7 +49,7 @@ class SearchResults extends Component{
                
                             : 
                 
-                <h2 className='tituloDetalle'>Cargando...</h2>} 
+                <h2 className='tituloDetalle'>No hay resultados para tu búsqueda...</h2>} 
 
                 </ul>
 
