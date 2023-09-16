@@ -32,7 +32,7 @@ class SearchResults extends Component{
     }
 
     render(){
-        console.log(this.state.resultado.id)
+        console.log(this.state.resultado)
         return(
         <React.Fragment>
 
@@ -45,7 +45,9 @@ class SearchResults extends Component{
                     
                 {this.state.resultado.length > 0 ?  
                 
-                <MoviesCards key={this.state.resultado.id} name={this.state.resultado.title} descripcion={this.state.resultado.overview} id={this.state.resultado.id} img={this.state.resultado.poster_path} />
+                <ul className="categoriesMasVistas">
+                {this.state.resultado.map ((movie,idx)=> <MoviesCards key={movie.id+idx} name={movie.title} descripcion={movie.overview} id={movie.id} img={movie.poster_path}  />  )}                
+               </ul> 
                
                             : 
                 
