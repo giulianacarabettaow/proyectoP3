@@ -227,7 +227,22 @@ li{
     justify-content: space-evenly;
 }
 
-
+.error{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: inherit;
+    align-items: center;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bolder;
+    color: #B8B8B8;
+    background-color: #17112a;
+    border-radius: 10px;
+    padding-bottom: 20px;;
+}
+.gifError{
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
 
 .search{
     color: #989898e8;
