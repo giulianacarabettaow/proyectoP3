@@ -40,6 +40,10 @@
 body{
     background-color: #0c0622;
 }
+.messi{
+    border-radius: 10px;
+    height: 230px;
+}
 .listaHeader{
     display: flex;
     flex-wrap: wrap;

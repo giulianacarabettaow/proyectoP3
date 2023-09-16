@@ -94,7 +94,7 @@ class MoviesDetail extends Component{
                     <section className='sectionDetalle'>
 
                     <div className='principalDetalle'>
-                            <img className='imgDetalle' src={`https://image.tmdb.org/t/p/w500/${this.state.oneMovie.poster_path}`}/> 
+                            <img className='imgDetalle' src={`https://image.tmdb.org/t/p/w500/${this.state.oneMovie.poster_path}`} alt={this.state.oneMovie.original_title}/> 
                         <h2 className='tituloDetalle'>{this.state.oneMovie.original_title}</h2>  
                     </div>
                     <ul className='detallePelis'>

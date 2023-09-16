@@ -88,7 +88,7 @@ class MoviesCards extends Component{
         return(
             <React.Fragment>
             <ul className="listaPelis">
-            <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} className="imgPeli"/>
+            <img src={`https://image.tmdb.org/t/p/w342/${this.props.img}`} className="imgPeli" alt={this.props.name}/>
                 <li className="titleMovies">{this.props.name} </li>
             
                 <li>{ this.state.show ? this.props.descripcion : ''} </li>
